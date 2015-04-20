@@ -65,6 +65,8 @@
     ;; finish your thoughts
     auto-complete
 
+    idle-highlight-mode
+    
     yaml-mode
     markdown-mode))
 

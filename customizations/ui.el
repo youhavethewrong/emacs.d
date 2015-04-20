@@ -68,3 +68,6 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+(require 'idle-highlight-mode)
+(add-to-list 'idle-highlight-mode t)
