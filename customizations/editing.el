@@ -70,4 +70,3 @@
 
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c q") '(join-line))
-
