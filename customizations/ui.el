@@ -26,8 +26,7 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-;; (load-theme 'tomorrow-night-bright t)
-(load-theme 'tango-dark t)
+(load-theme 'armadillo t)
 
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 110)
@@ -68,6 +67,3 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
-
-(require 'idle-highlight-mode)
-(add-to-list 'idle-highlight-mode t)

@@ -65,9 +65,13 @@
     ;; finish your thoughts
     auto-complete
 
+    ;; highlight matching words while idle
     idle-highlight-mode
-    
+
+    ;; handle YAML
     yaml-mode
+
+    ;; handle Markdown
     markdown-mode))
 
 (dolist (p my-packages)
