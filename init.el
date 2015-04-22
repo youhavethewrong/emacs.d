@@ -43,6 +43,9 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    ;; autocomplete assistance from CIDER
+    ac-cider
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -72,7 +75,10 @@
     yaml-mode
 
     ;; handle Markdown
-    markdown-mode))
+    markdown-mode
+
+    ;; increment and decrement number easily
+    evil-numbers))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
