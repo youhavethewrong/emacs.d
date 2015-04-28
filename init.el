@@ -78,7 +78,11 @@
     markdown-mode
 
     ;; increment and decrement number easily
-    evil-numbers))
+    evil-numbers
+
+    ;; clojure refactoring
+    clj-refactor
+    ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
