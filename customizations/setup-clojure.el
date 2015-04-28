@@ -12,6 +12,9 @@
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
 
+;; Clojure refactoring
+(require 'clj-refactor)
+
 ;; syntax hilighting for midje
 (add-hook 'clojure-mode-hook
           (lambda ()
@@ -23,7 +26,9 @@
                ("(\\(background?\\)"
                 (1 font-lock-keyword-face))))
             (define-clojure-indent (fact 1))
-            (define-clojure-indent (facts 1))))
+            (define-clojure-indent (facts 1))
+            (clj-refactor-mode 1)
+            (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 ;;;;
 ;; Cider
