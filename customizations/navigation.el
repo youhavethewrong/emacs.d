@@ -50,6 +50,11 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+(defun kill-other-buffers ()
+    "Kill all other buffers."
+      (interactive)
+        (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
 ;; http://www.emacswiki.org/emacs/Smex
