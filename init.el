@@ -82,6 +82,9 @@
 
     ;; clojure refactoring
     clj-refactor
+
+    ;; eclipse integration
+    emacs-eclim
     ))
 
 (dolist (p my-packages)
