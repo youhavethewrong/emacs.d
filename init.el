@@ -146,3 +146,4 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
+(put 'downcase-region 'disabled nil)
