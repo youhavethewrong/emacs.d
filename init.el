@@ -46,6 +46,12 @@
     ;; autocomplete assistance from CIDER
     ac-cider
 
+    ;; autocomplete for nREPL
+    ac-nrepl
+
+    ;; clojure cheatsheet for handy referencing
+    clojure-cheatsheet
+    
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -82,9 +88,6 @@
 
     ;; clojure refactoring
     clj-refactor
-
-    ;; eclipse integration
-    emacs-eclim
     ))
 
 (dolist (p my-packages)
