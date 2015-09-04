@@ -88,6 +88,9 @@
 
     ;; clojure refactoring
     clj-refactor
+
+    ;; make the mode line look neat
+    powerline
     ))
 
 (dolist (p my-packages)
