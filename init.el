@@ -160,8 +160,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2)
- '(custom-safe-themes (quote ("3828262147cc234c5712d89766d3c7bc04e30c8c95e331525b9ae854ba426aba" default))))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

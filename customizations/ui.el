@@ -70,5 +70,5 @@
 
 ;; If we're using a graphical display, make it pretty
 (when (display-graphic-p)
-    (load-theme 'green-phosphor t)
+    (load-theme 'odersky t)
     (powerline-default-theme))
