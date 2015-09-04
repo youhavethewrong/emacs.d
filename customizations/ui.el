@@ -67,3 +67,8 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; If we're using a graphical display, make it pretty
+(when (display-graphic-p)
+    (load-theme 'green-phosphor t)
+    (powerline-default-theme))
