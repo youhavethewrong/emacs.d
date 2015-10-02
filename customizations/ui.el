@@ -67,3 +67,15 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; improve scrolling on slow computers
+(setq redisplay-dont-pause t
+  scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
+
+;; If we're using a graphical display, make it pretty
+(when (display-graphic-p)
+    (load-theme 'odersky t)
+    (powerline-default-theme))
