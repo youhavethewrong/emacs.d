@@ -13,3 +13,16 @@
 
 ;; Tell magit we know about the auto revert mode
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+;; Maven commands
+(defun mci ()
+  (interactive)
+  (compile "mvn clean install"))
+
+(defun mvddu ()
+  (interactive)
+  (compile "mvn versions:display-dependency-updates"))
+  
+(defun mdt ()
+  (interactive)
+  (compile "mvn dependency:tree")) 
