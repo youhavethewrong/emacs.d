@@ -15,7 +15,7 @@
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Default grep command
-(setq grep-command "grep --color --exclude-dir=target -nriH -e ")
+(setq grep-command "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e ")
 
 ;; Maven commands
 (defun mci ()
