@@ -29,3 +29,20 @@
 (defun mdt ()
   (interactive)
   (compile "mvn dependency:tree")) 
+  
+;; Browse commands
+(custom-set-variables
+ '(browse-url-browser-function (quote browse-url-firefox)))
+
+(defun mingle ()
+  (interactive)
+  (browse-url "https://psprojects.qg.com/projects/qds_development/cards/grid?aggregate_property[column]=nb+points&aggregate_property[row]=nb+points&aggregate_type[column]=sum&aggregate_type[row]=sum&color_by=story+type&filters[mql]=Type+%3D+Story+AND+%28+Milestone+IN+%28SELECT+number+WHERE+type+%3D+Milestone+AND+%27Milestone+Type%27+%3D+%27Strategic%27%29%29+AND+%28%28State+IN+%28%27Development+in+Progress%27%2C+%27Ready+for+Testing%27%2C+Testing%29+OR+State+%3D+Completed+AND+%27Iteration+Completed%27+%3D+%28Current+Iteration%29%29+OR+State+%3D+Scheduled+AND+%27Iteration+Scheduled%27+!%3D+%28Next+Iteration%29%29&group_by[lane]=state&group_by[row]=milestone&lanes=Scheduled%2CTesting%2CCompleted%2CReady+for+Testing%2CDevelopment+in+Progress&tab=Iteration+-+Strategic"))
+
+(defun hudson ()
+  (interactive)
+  (browse-url "http://psbuilds.qg.com"))
+
+(defun fitnesse ()
+  (interactive)
+  (browse-url "http://psacceptance.qg.com"))
+

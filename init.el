@@ -135,6 +135,9 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
+;; Tape
+(load "tape.el")
+
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
