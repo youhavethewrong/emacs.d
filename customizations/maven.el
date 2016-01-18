@@ -56,3 +56,8 @@
   (let ((default-directory (find-containing-directory-upwards "pom.xml"))
         (test-name (file-name-base (buffer-file-name))))
     (compile (concat "mvn -Dtest=" test-name "#" (thing-at-point 'word) " test"))))
+
+(defun mvn-grep (term)
+  (interactive "sEnter value: ")
+  (let ((default-directory (find-containing-directory-upwards "pom.xml")))
+    (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e " term " " default-directory))))
