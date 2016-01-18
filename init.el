@@ -135,6 +135,9 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
+;; Maven plugin
+(load "maven.el")
+
 ;; Tape
 (load "tape.el")
 
