@@ -1,7 +1,7 @@
 (defun empty-buffer (buffer-name)
   (if (get-buffer buffer-name)
-      (get-buffer buffer-name)
-    (generate-new-buffer buffer-name)))
+    (get-buffer buffer-name)
+      (generate-new-buffer buffer-name)))
 
 (defun populate-buffer (buffer content)
   (set-buffer buffer)

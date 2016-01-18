@@ -17,19 +17,6 @@
 ;; Default grep command
 (setq grep-command "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e ")
 
-;; Maven commands
-(defun mci ()
-  (interactive)
-  (compile "mvn clean install"))
-
-(defun mvddu ()
-  (interactive)
-  (compile "mvn versions:display-dependency-updates"))
-  
-(defun mdt ()
-  (interactive)
-  (compile "mvn dependency:tree")) 
-  
 ;; Browse commands
 (defun mingle ()
   (interactive)
