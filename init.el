@@ -138,6 +138,8 @@
 ;; Maven plugin
 (load "maven.el")
 
+(load "gosling.el")
+
 ;; Tape
 (load "tape.el")
 
