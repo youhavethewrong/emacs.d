@@ -10,9 +10,13 @@
   (interactive)
   (in-project (lambda (d) (compile (concat "mvn clean install")))))
 
+(defun mvn-updates ()
+  (interactive)
+  (in-project (lambda (d) (compile (concat "mvn versions:display-dependency-updates")))))
+
 (defun mvn-tree ()
   (interactive)
-  (in-project (lambda (d) (compile (concat "mvn versions:display-dependency-updates"))))) 
+  (in-project (lambda (d) (compile (concat "mvn dependency:tree")))))
 
 (defun mvn-suite ()
   (interactive)
