@@ -44,6 +44,9 @@
 
     ;; clojure cheatsheet for handy referencing
     clojure-cheatsheet
+
+    ;; groovy
+    groovy-mode
     
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
@@ -149,8 +152,9 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
-;; Langauage-specific
+;; Language-specific
 (load "setup-clojure.el")
+(load "setup-groovy.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
 
