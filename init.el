@@ -138,13 +138,11 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
-;; Maven plugin
+;; Work plugins
 (load "maven.el")
-
 (load "gosling.el")
-
-;; Tape
 (load "tape.el")
+(load "lein.el")
 
 ;; Hard-to-categorize customizations
 (load "misc.el")
