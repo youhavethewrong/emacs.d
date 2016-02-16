@@ -1,3 +1,5 @@
+(require 'mike)
+
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -37,7 +39,7 @@
    (pcase k 
      ("hudson" "http://psbuilds.qg.com")
      ("builds" "http://psbuilds.qg.com")
-     ("mingle" "http://wwwqds.qg.com")
+     ("mingle" "http://psprojects.qg.com")
      ("strategic" "https://psprojects.qg.com/projects/qds_development/cards/grid?aggregate_property[column]=nb+points&aggregate_property[row]=nb+points&aggregate_type[column]=sum&aggregate_type[row]=sum&color_by=story+type&filters[mql]=Type+%3D+Story+AND+%28+Milestone+IN+%28SELECT+number+WHERE+type+%3D+Milestone+AND+%27Milestone+Type%27+%3D+%27Strategic%27%29%29+AND+%28%28State+IN+%28%27Development+in+Progress%27%2C+%27Ready+for+Testing%27%2C+Testing%29+OR+State+%3D+Completed+AND+%27Iteration+Completed%27+%3D+%28Current+Iteration%29%29+OR+State+%3D+Scheduled+AND+%27Iteration+Scheduled%27+!%3D+%28Next+Iteration%29%29&group_by[lane]=state&group_by[row]=milestone&lanes=Scheduled%2CTesting%2CCompleted%2CReady+for+Testing%2CDevelopment+in+Progress&tab=Iteration+-+Strategic")
      ("tactical" "https://psprojects.qg.com/projects/qds_development/cards/grid?aggregate_property[column]=nb+points&aggregate_property[row]=nb+points&aggregate_type[column]=sum&aggregate_type[row]=sum&color_by=story+type&filters[mql]=Type+%3D+Story+AND+%28+Milestone+IN+%28SELECT+number+WHERE+type+%3D+Milestone+AND+%27Milestone+Type%27+%3D+%27Tactical%27%29+or+MILESTONE+is+NULL%29+AND+%28%28State+IN+%28%27Scheduled%27%2C+%27Development+in+progress%27%2C+%27Ready+for+testing%27%2C+Testing%29+OR+State+IN+%28Completed%29+AND+%27Iteration+Completed%27+%3D+%28Current+Iteration%29%29+AND+%27Iteration+Scheduled%27+!%3D+%28Next+Iteration%29+%29&group_by[lane]=state&group_by[row]=epic&lanes=Scheduled%2CTesting%2CCompleted%2CReady+for+Testing%2CDevelopment+in+Progress&tab=Iteration+-+Tactical")
      ("releases" "https://psprojects.qg.com/projects/qds_development/cards/tree?columns=Release+Date&expands=1494%2C12160&tab=Releases+-+Pending&tf_release[]=[Release+Date][is+greater+than][%28today%29]&tf_release[]=[Release+Date][is][%28today%29]&tf_release[]=[Release+Date][is][]&tree_name=Releases")
@@ -58,3 +60,9 @@
   (interactive)
   (service-flow)
   (isearch-forward))
+
+(defun println-grep ()
+  (interactive)
+  (grep "grep -inr --color --exclude-dir=\"target\" --exclude-dir=\"node_modules\" --include=*.{clj,cljc,cljs,java,groovy} \"println\" ."))
+
+
