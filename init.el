@@ -87,6 +87,9 @@
 
     ;; make the mode line look neat
     powerline
+
+    ;; turn off line numbering sometimes
+    linum-off
     ))
 
 (dolist (p my-packages)
