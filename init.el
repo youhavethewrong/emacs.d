@@ -156,6 +156,9 @@
 (load "setup-js.el")
 (load "setup-misc-programming.el")
 
+;; IRC
+(load "irc.el")
+
 ;; I like doing dangerous things
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
