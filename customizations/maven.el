@@ -44,4 +44,4 @@
       (if (s-blank? input) default-term input))))
   (in-project
    (lambda (d)
-     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e " term " " d)))))
+     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
