@@ -20,13 +20,20 @@
 (setq grep-command "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e ")
 
 ;; Miscellaneous functions
+(defun place-search (term target)
+  (grep (concat "grep --color -nriH -e " term " " target)))
+
 (defun prop-search (term)
   (interactive "sEnter value: ")
-  (grep (concat "grep --color -nriH -e " term " ~/sandbox/processor-properties/")))
+  (place-search term "~/sandbox/processor-properties/"))
+
+(defun tom-search (term)
+  (interactive "sEnter value: ")
+  (place-search term "~/sandbox/tomcatxmlconfig/"))
 
 (defun flow-search (term)
   (interactive "sEnter value: ")
-  (grep (concat "grep --color -nriH -e " term " ~/sandbox/serviceflow/src/main/resouces/serviceFlow.xml")))
+  (place-search term "~/sandbox/serviceflow/src/main/resouces/serviceFlow.xml"))
 
 (defun dev-browse (k)
   (interactive
