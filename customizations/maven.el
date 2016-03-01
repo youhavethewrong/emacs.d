@@ -8,15 +8,20 @@
 
 (defun mvn-build ()
   (interactive)
-  (in-project (lambda (d) (compile (concat "mvn clean install")))))
+  (in-project (lambda (d) (compile "mvn clean install"))))
 
 (defun mvn-updates ()
   (interactive)
-  (in-project (lambda (d) (compile (concat "mvn versions:display-dependency-updates")))))
+  (in-project (lambda (d) (compile "mvn versions:display-dependency-updates"))))
 
 (defun mvn-tree ()
   (interactive)
-  (in-project (lambda (d) (compile (concat "mvn dependency:tree")))))
+  (in-project (lambda (d) (compile "mvn dependency:tree")))) 
+
+(defun mvn-all-tests ()
+  (interactive)
+  (in-project
+   (lambda (d) (compile "mvn test"))))
 
 (defun mvn-suite ()
   (interactive)
@@ -44,4 +49,4 @@
       (if (s-blank? input) default-term input))))
   (in-project
    (lambda (d)
-     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target -nriH -e " term " " d)))))
+     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
