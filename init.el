@@ -39,9 +39,6 @@
     ;; autocomplete assistance from CIDER
     ac-cider
 
-    ;; autocomplete for nREPL
-    ac-nrepl
-
     ;; clojure cheatsheet for handy referencing
     clojure-cheatsheet
 
