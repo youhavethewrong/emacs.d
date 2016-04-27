@@ -13,3 +13,7 @@
 ;; .vm is for velocity templates
 (require 'vtl)
 (add-to-list 'auto-mode-alist '("\\.vm$" . turn-on-vtl-mode))
+
+;; make java indentation friendly
+(add-hook 'java-mode-hook (lambda ()
+                            (setq c-basic-offset 4)))
