@@ -37,6 +37,18 @@
      (let ((test-name (file-name-base (buffer-file-name))))
        (compile (concat "mvn -Dtest=" test-name "#" (thing-at-point 'word) " test"))))))
 
+(defun mvn-clojure-test ()
+  (interactive)
+  (mvn-in-project
+   (lambda (d)
+     (compile "mvn compile && mvn clojure:test"))))
+
+(defun mvn-compile ()
+  (interactive)
+  (mvn-in-project
+   (lambda (d)
+     (compile (concat "mvn compile")))))
+
 (defvar mvn-grep-history nil)
 (defun mvn-grep (term)
   (interactive
