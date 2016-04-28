@@ -97,10 +97,12 @@ The page size can be also changed interactively within the inspector."
   (cider-inspect-expr (cider-defun-at-point) (cider-current-ns)))
 
 ;;;###autoload
-(defun cider-inspect-last-result ()
-  "Inspect the most recent eval result."
+(defun cider-inspect-read-and-inspect ()
+  "Read an expression from the minibuffer and inspect its result."
   (interactive)
-  (cider-inspect-expr "*1" (cider-current-ns)))
+  (when-let ((expression (cider-read-from-minibuffer "Inspect expression: "
+                                                     (cider-sexp-at-point))))
+    (cider-inspect-expr expression (cider-current-ns))))
 
 ;;;###autoload
 (defun cider-inspect (&optional arg)
@@ -112,7 +114,7 @@ With a second prefix argument it prompts for an expression to eval and inspect."
   (pcase arg
     (1 (cider-inspect-last-sexp))
     (4 (cider-inspect-defun-at-point))
-    (16 (call-interactively #'cider-inspect-expr))))
+    (16 (cider-inspect-read-and-inspect))))
 
 ;; Operations
 (defun cider-inspector--value-handler (_buffer value)
@@ -141,13 +143,8 @@ Used for all inspector nREPL ops."
                                #'cider-inspector--err-handler
                                #'identity))
 
-;;;###autoload
 (defun cider-inspect-expr (expr ns)
-  "Evaluate EXPR in NS and inspect its value.
-Interactively, EXPR is read from the minibuffer, and NS the
-current buffer's namespace."
-  (interactive (list (cider-read-from-minibuffer "Inspect expression: " (cider-sexp-at-point))
-                     (cider-current-ns)))
+  "Evaluate EXPR in NS and inspect its value."
   (cider--prep-interactive-eval expr)
   (cider-nrepl-send-request
    (append (nrepl--eval-request expr (cider-current-session) ns)
@@ -331,10 +328,6 @@ that value.
            (cider-inspector-operate-on-point))
           (t
            (error "No clickable part here")))))
-
-;;;###autoload
-(define-obsolete-function-alias 'cider-inspect-read-and-inspect
-  'cider-inspect-expr "0.13.0")
 
 (provide 'cider-inspector)
 

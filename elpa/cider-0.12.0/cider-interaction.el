@@ -220,10 +220,7 @@ namespace-qualified function of zero arity."
   "Face used to highlight compilation warnings in Clojure buffers."
   :group 'cider)
 
-(defconst cider-minimum-clojure-version "1.7.0"
-  "Minimum supported version of Clojure.")
-
-(defconst cider-required-nrepl-version "0.2.12"
+(defvar cider-required-nrepl-version "0.2.12"
   "The minimum nREPL version that's known to work properly with CIDER.")
 
 ;;; Minibuffer
@@ -652,7 +649,6 @@ can be used to display the evaluation result."
         (point (when point (copy-marker point))))
     (nrepl-make-response-handler (or buffer eval-buffer)
                                  (lambda (_buffer value)
-                                   (cider--make-fringe-overlay point)
                                    (cider--display-interactive-eval-result value point))
                                  (lambda (_buffer out)
                                    (cider-emit-interactive-eval-output out))
@@ -667,14 +663,8 @@ can be used to display the evaluation result."
     (nrepl-make-response-handler (or buffer eval-buffer)
                                  (lambda (buffer value)
                                    (cider--display-interactive-eval-result value)
-                                   (when (buffer-live-p buffer)
-                                     (with-current-buffer buffer
-                                       (save-excursion
-                                         (goto-char (point-min))
-                                         (while (progn (clojure-forward-logical-sexp)
-                                                       (not (eobp)))
-                                           (cider--make-fringe-overlay (point))))
-                                       (run-hooks 'cider-file-loaded-hook))))
+                                   (with-current-buffer buffer
+                                     (run-hooks 'cider-file-loaded-hook)))
                                  (lambda (_buffer value)
                                    (cider-emit-interactive-eval-output value))
                                  (lambda (_buffer err)

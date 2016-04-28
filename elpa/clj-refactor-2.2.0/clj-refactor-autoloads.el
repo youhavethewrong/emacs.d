@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "clj-refactor" "clj-refactor.el" (22299 33144
-;;;;;;  739165 883000))
+;;;### (autoloads nil "clj-refactor" "clj-refactor.el" (22306 28337
+;;;;;;  633700 16000))
 ;;; Generated autoloads from clj-refactor.el
 
 (autoload 'cljr-add-keybindings-with-prefix "clj-refactor" "\
@@ -84,11 +84,9 @@ See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-move-form
 (autoload 'cljr-add-declaration "clj-refactor" "\
 Add a declare for the current def near the top of the buffer.
 
-With a prefix add a declaration for the symbol under the cursor instead.
-
 See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-add-declaration
 
-\(fn FOR-THING-AT-POINT-P)" t nil)
+\(fn)" t nil)
 
 (autoload 'cljr-extract-constant "clj-refactor" "\
 Extract form at (or above) point as a constant.
@@ -387,8 +385,8 @@ A mode to keep the clj-refactor keybindings.
 
 ;;;***
 
-;;;### (autoloads nil nil ("clj-refactor-pkg.el") (22299 33144 748015
-;;;;;;  423000))
+;;;### (autoloads nil nil ("clj-refactor-pkg.el") (22306 28337 650747
+;;;;;;  472000))
 
 ;;;***
 

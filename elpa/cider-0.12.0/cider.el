@@ -11,7 +11,7 @@
 ;;         Steve Purcell <steve@sanityinc.com>
 ;; Maintainer: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://www.github.com/clojure-emacs/cider
-;; Version: 0.13.0-cvs
+;; Version: 0.12.0
 ;; Package-Requires: ((emacs "24.3") (clojure-mode "5.3.0") (pkg-info "0.4") (queue "0.1.1") (spinner "1.7") (seq "2.14"))
 ;; Keywords: languages, clojure, cider
 
@@ -88,12 +88,12 @@ project inference will take place."
 
 (require 'seq)
 
-(defconst cider-version "0.13.0-snapshot"
+(defconst cider-version "0.12.0"
   "Fallback version used when it cannot be extracted automatically.
 Normally it won't be used, unless `pkg-info' fails to extract the
 version from the CIDER package or library.")
 
-(defconst cider-codename "California"
+(defconst cider-codename "Seattle"
   "Codename used to denote stable releases.")
 
 (defcustom cider-lein-command
@@ -148,12 +148,10 @@ project.clj for leiningen or build.boot for boot, could be found."
 
 (defcustom cider-known-endpoints nil
   "A list of connection endpoints where each endpoint is a list.
-For example: \\='((\"label\" \"host\" \"port\")).
-The label is optional so that \\='(\"host\" \"port\") will suffice.
+For example: '((\"label\" \"host\" \"port\")).
+The label is optional so that '(\"host\" \"port\") will suffice.
 This variable is used by `cider-connect'."
-  :type '(repeat (list (string :tag "label")
-                       (string :tag "host")
-                       (string :tag "port")))
+  :type 'list
   :group 'cider)
 
 (defcustom cider-connected-hook nil
@@ -313,8 +311,6 @@ dependencies."
 (defconst cider--cljs-repl-types
   '(("(cemerick.piggieback/cljs-repl (cljs.repl.rhino/repl-env))"
      "Rhino" "")
-    ("(do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/start-figwheel!) (figwheel-sidecar.repl-api/cljs-repl))"
-     "Figwheel-sidecar" " (add figwheel-sidecar to your plugins)")
     ("(do (require 'cljs.repl.node) (cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env)))"
      "Node" " (requires NodeJS to be installed)")
     ("(do (require 'weasel.repl.websocket) (cemerick.piggieback/cljs-repl (weasel.repl.websocket/repl-env :ip \"127.0.0.1\" :port 9001)))"
@@ -325,9 +321,8 @@ dependencies."
 This is only used in lein projects.  It is evaluated in a Clojure REPL and
 it should start a ClojureScript REPL."
   :type `(choice ,@(seq-map (lambda (x) `(const :tag ,(apply #'concat (cdr x)) ,(car x)))
-                            cider--cljs-repl-types)
+                          cider--cljs-repl-types)
                  (string :tag "Custom"))
-  :safe (lambda (x) (assoc x cider--cljs-repl-types))
   :group 'cider)
 
 (defun cider-create-sibling-cljs-repl (client-buffer)
@@ -476,10 +471,6 @@ gets associated with it."
 
 (defun cider-select-endpoint ()
   "Interactively select the host and port to connect to."
-  (dolist (ep cider-known-endpoints)
-    (unless (stringp (nth ep 2))
-      (user-error "The port for %s in `cider-known-endpoints' should be a string"
-                  (nth ep 0))))
   (let* ((ssh-hosts (cider--ssh-hosts))
          (hosts (seq-uniq (append (when cider-host-history
                                     ;; history elements are strings of the form "host:port"
@@ -624,17 +615,6 @@ In case `default-directory' is non-local we assume the command is available."
                                "Can't determine nREPL's version.\nPlease, update nREPL to %s."
                                cider-required-nrepl-version)))
 
-(defun cider--check-clojure-version-supported ()
-  "Ensure that we are meeting the minimum supported version of Clojure."
-  (if-let ((clojure-version (cider--clojure-version)))
-      (when (version< clojure-version cider-minimum-clojure-version)
-        (cider-repl-manual-warning "installation/#prerequisites"
-                                   "Clojure version (%s) is not supported (minimum %s). CIDER will not work."
-                                   clojure-version cider-minimum-clojure-version))
-    (cider-repl-manual-warning "installation/#prerequisites"
-                               "Clojure version information could not be determined. Requires a minimum version %s."
-                               cider-minimum-clojure-version)))
-
 (defun cider--check-middleware-compatibility ()
   "CIDER frontend/backend compatibility check.
 Retrieve the underlying connection's CIDER-nREPL version and checks if the
@@ -660,7 +640,6 @@ buffer."
   (cider-make-connection-default (current-buffer))
   (cider-repl-init (current-buffer))
   (cider--check-required-nrepl-version)
-  (cider--check-clojure-version-supported)
   (cider--check-middleware-compatibility)
   (cider--debug-init-connection)
   (cider--subscribe-repl-to-server-out)
