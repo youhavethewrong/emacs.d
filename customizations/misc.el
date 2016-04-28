@@ -73,5 +73,6 @@
   (grep "grep -inr --color --exclude-dir=\"target\" --exclude-dir=\"node_modules\" --include=*.{clj,cljc,cljs,java,groovy} \"println\" ."))
 
 (defun kill-repl-buffers ()
+  (interactive)
   (kill-matching-buffers "cider")
   (kill-matching-buffers "nrepl"))

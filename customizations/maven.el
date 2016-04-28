@@ -1,6 +1,6 @@
 (require 'mike)
 
-(defun in-project (f)
+(defun mvn-in-project (f)
   (let ((default-directory (find-containing-directory-upwards "pom.xml")))
     (if default-directory
       (funcall f default-directory)
@@ -8,34 +8,46 @@
 
 (defun mvn-build ()
   (interactive)
-  (in-project (lambda (d) (compile "mvn clean install"))))
+  (mvn-in-project (lambda (d) (compile "mvn clean install"))))
 
 (defun mvn-updates ()
   (interactive)
-  (in-project (lambda (d) (compile "mvn versions:display-dependency-updates"))))
+  (mvn-in-project (lambda (d) (compile "mvn versions:display-dependency-updates"))))
 
 (defun mvn-tree ()
   (interactive)
-  (in-project (lambda (d) (compile "mvn dependency:tree")))) 
+  (mvn-in-project (lambda (d) (compile "mvn dependency:tree")))) 
 
 (defun mvn-all-tests ()
   (interactive)
-  (in-project
+  (mvn-in-project
    (lambda (d) (compile "mvn test"))))
 
 (defun mvn-suite ()
   (interactive)
-  (in-project
+  (mvn-in-project
    (lambda (d)
      (let ((test-name (file-name-base (buffer-file-name))))
        (compile (concat "mvn -Dtest=" test-name " test"))))))
 
 (defun mvn-test ()
   (interactive)
-  (in-project
+  (mvn-in-project
    (lambda (d)
      (let ((test-name (file-name-base (buffer-file-name))))
        (compile (concat "mvn -Dtest=" test-name "#" (thing-at-point 'word) " test"))))))
+
+(defun mvn-clojure-test ()
+  (interactive)
+  (mvn-in-project
+   (lambda (d)
+     (compile "mvn compile && mvn clojure:test"))))
+
+(defun mvn-compile ()
+  (interactive)
+  (mvn-in-project
+   (lambda (d)
+     (compile (concat "mvn compile")))))
 
 (defvar mvn-grep-history nil)
 (defun mvn-grep (term)
@@ -47,6 +59,6 @@
                      (concat "Search string (default \"" default-term "\"): ")))
            (input (read-from-minibuffer prompt nil nil nil 'mvn-grep-history)))
       (if (s-blank? input) default-term input))))
-  (in-project
+  (mvn-in-project
    (lambda (d)
      (grep (concat "grep --color --exclude-dir=.git --exclude-dir=target --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
