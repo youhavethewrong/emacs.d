@@ -38,12 +38,12 @@
 (defun dev-browse (k)
   (interactive
    (list (completing-read
-          "Choose a destination: " 
+          "Choose a destination: "
           '(("hudson" 1) ("builds" 2) ("mingle" 3) ("strategic" 4)
             ("tactical" 5) ("releases" 6) ("nexus" 7) ("red" 8) ("yellow" 9)
             ("white" 10)))))
   (browse-url
-   (pcase k 
+   (pcase k
      ("hudson" "http://psbuilds.qg.com")
      ("builds" "http://psbuilds.qg.com")
      ("mingle" "http://psprojects.qg.com")
@@ -54,6 +54,10 @@
      ("red" "http://qdsred.qg.com")
      ("yellow" "http://qdsyellow.qg.com")
      ("white" "http://wwwqds.qg.com"))))
+
+(defun lb-selfserve ()
+  (interactive)
+  (find-file "/scp:qdsyellow-logs:/mnt/data/log/selfserve.log"))
 
 (defun dev-card (number)
   (interactive "sEnter a story number: ")

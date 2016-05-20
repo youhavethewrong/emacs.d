@@ -19,6 +19,10 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
 
+(require 'tree-mode)
+(require 'windata)
+(require 'dirtree)
+
 
 ;; ido-mode allows you to more easily navigate choices. For example,
 ;; when you want to switch buffers, ido presents you with a list

@@ -16,7 +16,11 @@
 
 (defun mvn-tree ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn dependency:tree")))) 
+  (mvn-in-project (lambda (d) (compile "mvn dependency:tree"))))
+
+(defun mvn-verbose-tree ()
+  (interactive)
+  (mvn-in-project (lambda (d) (compile "mvn -Dverbose=true dependency:tree"))))
 
 (defun mvn-all-tests ()
   (interactive)
