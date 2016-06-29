@@ -2,16 +2,9 @@
 ;; Packages
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t )
 (add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
-;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
-
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
@@ -30,6 +23,8 @@
 (defvar my-packages
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
+    haskell-mode
+
     paredit
 
     ;; key bindings and code colorization for Clojure
@@ -46,12 +41,12 @@
     ;; autocomplete assistance from CIDER
     ac-cider
 
-    ;; autocomplete for nREPL
-    ac-nrepl
-
     ;; clojure cheatsheet for handy referencing
     clojure-cheatsheet
-    
+
+    ;; groovy
+    groovy-mode
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -91,6 +86,9 @@
 
     ;; make the mode line look neat
     powerline
+
+    ;; turn off line numbering sometimes
+    linum-off
     ))
 
 (dolist (p my-packages)
@@ -106,7 +104,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -142,28 +140,34 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
+;; Work plugins
+(load "maven.el")
+(load "gosling.el")
+(load "tape.el")
+(load "lein.el")
+
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
 ;; For editing lisps
 (load "elisp-editing.el")
 
-;; Langauage-specific
+;; Language-specific
 (load "setup-clojure.el")
+(load "setup-groovy.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
+
+;; IRC
+(load "irc.el")
+
+;; I like doing dangerous things
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'erase-buffer 'disabled nil)
+
+;; Custom variables
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(browse-url-browser-function (quote browse-url-firefox))
  )

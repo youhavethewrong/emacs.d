@@ -7,7 +7,9 @@
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
 
-;; Show line numbers
+;; Show line numbers almost always
+(require 'linum-off)
+(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
 (global-linum-mode)
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
@@ -29,7 +31,7 @@
 ;; (load-theme 'armadillo t)
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 105)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
