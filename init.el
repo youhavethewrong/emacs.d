@@ -23,8 +23,6 @@
 (defvar my-packages
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    haskell-mode
-
     paredit
 
     ;; key bindings and code colorization for Clojure
@@ -89,6 +87,16 @@
 
     ;; turn off line numbering sometimes
     linum-off
+
+    ;; haskell
+    haskell-mode
+
+    ;; erlang
+    erlang
+
+    ;; elixir
+    elixir-mode
+
     ))
 
 (dolist (p my-packages)
