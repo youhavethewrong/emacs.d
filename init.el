@@ -161,6 +161,9 @@
 ;; IRC
 (load "irc.el")
 
+;; Cool webkit browser inside emacs
+(load "webkit.el")
+
 ;; I like doing dangerous things
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
