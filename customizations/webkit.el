@@ -1,3 +1,5 @@
+(require 'xwidget)
+
 ;; make these keys behave like normal browser
 (define-key xwidget-webkit-mode-map [mouse-4] 'xwidget-webkit-scroll-down)
 (define-key xwidget-webkit-mode-map [mouse-5] 'xwidget-webkit-scroll-up)
