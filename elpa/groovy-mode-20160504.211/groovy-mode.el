@@ -96,7 +96,8 @@
     ; Whatever the claim, pragmatically it seems the bug remains. As a hack simply raise the version
     ; of the fix to 6.
 
-    (if (and (= emacs-major-version 24) (< emacs-minor-version 6))
+    (if (or (= emacs-major-version 24)
+	    (and (= emacs-major-version 25) (< emacs-minor-version 2)))
         (require 'cl))
 )
 
