@@ -46,7 +46,7 @@
 (defun mvn-test (test)
   (interactive
    (list
-    (let* ((default-term (thing-at-point 'word))
+    (let* ((default-term (thing-at-point 'symbol))
            (prompt (if (s-blank? default-term)
                      "Run test: "
                      (concat "Run test (default \"" default-term "\"): ")))
