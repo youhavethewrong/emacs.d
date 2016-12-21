@@ -18,9 +18,9 @@
   (interactive)
   (mvn-in-project (lambda (d) (compile "mvn dependency:tree"))))
 
-(defun mvn-verbose-tree ()
+(defun mvn-tree-verbose ()
   (interactive)
-  (mvn-in-project (lambda (d) (compile "mvn -Dverbose=true dependency:tree"))))
+  (mvn-in-project (lambda (d) (compile "mvn dependency:tree -Dverbose=true"))))
 
 (defun mvn-all-tests ()
   (interactive)
@@ -34,13 +34,6 @@
      (let ((test-name (file-name-base (buffer-file-name))))
        (compile (concat "mvn -Dtest=" test-name " test"))))))
 
-(defun mvn-test ()
-  (interactive)
-  (mvn-in-project
-   (lambda (d)
-     (let ((test-name (file-name-base (buffer-file-name))))
-       (compile (concat "mvn -Dtest=" test-name "#" (thing-at-point 'word) " test"))))))
-
 (defun mvn-clojure-test ()
   (interactive)
   (mvn-in-project
@@ -52,6 +45,21 @@
   (mvn-in-project
    (lambda (d)
      (compile (concat "mvn compile")))))
+
+(defvar mvn-test-history nil)
+(defun mvn-test (test)
+  (interactive
+   (list
+    (let* ((default-term (thing-at-point 'symbol))
+           (prompt (if (s-blank? default-term)
+                     "Run test: "
+                     (concat "Run test (default \"" default-term "\"): ")))
+           (input (read-from-minibuffer prompt nil nil nil 'mvn-test-history)))
+      (if (s-blank? input) default-term input))))
+  (mvn-in-project
+   (lambda (d)
+     (let ((test-name (file-name-base (buffer-file-name))))
+       (compile (concat "mvn -Dtest=" test-name "#" test " test"))))))
 
 (defvar mvn-grep-history nil)
 (defun mvn-grep (term)

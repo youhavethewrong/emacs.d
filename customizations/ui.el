@@ -9,7 +9,7 @@
 
 ;; Show line numbers almost always
 (require 'linum-off)
-(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode)) 
+(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
 (global-linum-mode)
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
@@ -28,10 +28,9 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-;; (load-theme 'armadillo t)
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 105)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
@@ -70,7 +69,14 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
+;; improve scrolling on slow computers
+(setq redisplay-dont-pause t
+  scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
+
 ;; If we're using a graphical display, make it pretty
 (when (display-graphic-p)
-    (load-theme 'odersky t)
+    (load-theme 'leuven t)
     (powerline-default-theme))

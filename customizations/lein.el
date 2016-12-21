@@ -10,6 +10,14 @@
   (interactive)
   (lein-in-project (lambda (d) (compile (concat "lein do clean, test, install")))))
 
+(defun lein-tree ()
+  (interactive)
+  (lein-in-project (lambda (d) (compile (concat "lein do clean, pom; mvn -Dverbose=true dependency:tree")))))
+
+(defun lein-updates ()
+  (interactive)
+  (lein-in-project (lambda (d) (compile (concat "lein ancient")))))
+
 (defvar lein-grep-history nil)
 (defun lein-grep (term)
   (interactive
