@@ -1,0 +1,1 @@
+(define-package "kibit-helper" "0.1.1" "Conveniently use the Kibit Leiningen plugin from Emacs" '((s "0.8") (emacs "24")) :url "http://www.github.com/brunchboy/kibit-helper" :keywords '("languages" "clojure" "kibit"))
