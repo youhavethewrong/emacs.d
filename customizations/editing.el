@@ -78,3 +78,13 @@
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(defun toggle-delete-trailing-whitespace ()
+  (interactive)
+  (if (member 'delete-trailing-whitespace before-save-hook )
+    (progn
+      (remove-hook 'before-save-hook 'delete-trailing-whitespace)
+      (message "Hook removed."))
+    (progn
+      (add-hook 'before-save-hook 'delete-trailing-whitespace)
+      (message "Hook added."))))
