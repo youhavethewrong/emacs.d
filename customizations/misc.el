@@ -55,14 +55,6 @@
      ("yellow" "http://qdsyellow.qg.com")
      ("white" "http://wwwqds.qg.com"))))
 
-(defun lb-selfserve ()
-  (interactive)
-  (find-file "/scp:qdsyellow-logs:/mnt/data/log/selfserve.log"))
-
-(defun dev-card (number)
-  (interactive "sEnter a story number: ")
-  (browse-url (concat "https://psprojects.qg.com/projects/qds_development/cards/" number) ))
-
 (defun flow-browse ()
   (interactive)
   (find-file "~/sandbox/serviceflow/src/main/resources/serviceFlow.xml"))
