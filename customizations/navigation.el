@@ -19,7 +19,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
 
-
 ;; ido-mode allows you to more easily navigate choices. For example,
 ;; when you want to switch buffers, ido presents you with a list
 ;; of buffers in the the mini-buffer. As you start to type a buffer's
