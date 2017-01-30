@@ -44,8 +44,7 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-
-;; comments
+;; Enable really easy commenting
 (defun toggle-comment-on-line ()
   "comment or uncomment current line"
   (interactive)
@@ -88,3 +87,27 @@
     (progn
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
       (message "Hook added."))))
+
+;; Try to stay near the home row
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
+(global-unset-key (kbd "<C-left>"))
+(global-unset-key (kbd "<C-right>"))
+(global-unset-key (kbd "<C-up>"))
+(global-unset-key (kbd "<C-down>"))
+(global-unset-key (kbd "<M-left>"))
+(global-unset-key (kbd "<M-right>"))
+(global-unset-key (kbd "<M-up>"))
+(global-unset-key (kbd "<M-down>"))
+(global-unset-key (kbd "<prior>"))
+(global-unset-key (kbd "<next>"))
+(global-unset-key (kbd "<home>"))
+(global-unset-key (kbd "<end>"))
+(global-unset-key (kbd "<insert>"))
+(global-unset-key (kbd "<delete>"))
+
+;; Bind keys to work like pgup and pgdn
+(global-set-key (kbd "M-n") 'scroll-up-command)
+(global-set-key (kbd "M-p") 'scroll-down-command)
