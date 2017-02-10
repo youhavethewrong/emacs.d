@@ -97,6 +97,8 @@
     ;; elixir
     elixir-mode
 
+    ;; fsharp
+    fsharp-mode
     ))
 
 (dolist (p my-packages)
