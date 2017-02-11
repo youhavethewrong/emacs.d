@@ -117,23 +117,20 @@
   (global-set-key (kbd "<up>") 'previous-line)
   (global-set-key (kbd "<down>") 'next-line)
   (global-set-key (kbd "<C-left>") 'backward-word)
-  (global-set-key (kbd "<C-right>") 'forward-word)
-;;  (global-set-key (kbd "<C-up>"))
-;;  (global-set-key (kbd "<C-down>"))
-;;  (global-set-key (kbd "<M-left>"))
-;;  (global-set-key (kbd "<M-right>"))
-;;  (global-set-key (kbd "<M-up>"))
-;;  (global-set-key (kbd "<M-down>"))
-;;  (global-set-key (kbd "<prior>"))
-;;  (global-set-key (kbd "<next>"))
-;;  (global-set-key (kbd "<home>"))
-;;  (global-set-key (kbd "<end>"))
-;;  (global-set-key (kbd "<insert>"))
-;;  (global-set-key (kbd "<delete>"))
-  )
+  (global-set-key (kbd "<C-right>") 'forward-word))
 
-(no-home-row)
+(home-row)
 
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
+
+;; Binds for SSH terminal use
+(global-set-key (kbd "<deletechar>") 'backward-kill-word)
+(global-set-key (kbd "TAB") 'indent-for-tab-command)
+
+(global-set-key (kbd "M-i") 'paredit-backward-slurp-sexp)
+(global-set-key (kbd "M-o") 'paredit-forward-slurp-sexp)
+
+(global-set-key (kbd "C-M-i") 'paredit-backward-barf-sexp)
+(global-set-key (kbd "C-M-o") 'paredit-forward-barf-sexp)
