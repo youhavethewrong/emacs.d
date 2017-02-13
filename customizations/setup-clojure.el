@@ -59,21 +59,10 @@
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojurescript-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
-
-;; key bindings
-;; these help me out with the way I usually develop web apps
-(defun cider-start-http-server ()
-  (interactive)
-  (cider-load-current-buffer)
-  (let ((ns (cider-current-ns)))
-    (cider-repl-set-ns ns)
-    (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
-    (cider-interactive-eval (format "(def server (%s/start)) (println server)" ns))))
-
-
-(defun cider-refresh ()
-  (interactive)
-  (cider-interactive-eval (format "(user/reset)")))
+;; Wrap cider-refresh with system lifecycle functions from user namespace.
+;; Run cider-refresh with C-c C-x.
+(setq cider-refresh-before-fn "user/stop"
+      cider-refresh-after-fn "user/go")
 
 (defun cider-user-ns ()
   (interactive)
