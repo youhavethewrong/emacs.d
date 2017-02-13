@@ -88,8 +88,10 @@
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
       (message "Hook added."))))
 
-;; Try to stay near the home row
-(defun home-row ()
+;; Toggling of keys that slow down editing when used.
+(defvar slowpoke-keys? nil)
+
+(defun unset-slowpoke-keys ()
   (interactive)
   (global-unset-key (kbd "<left>"))
   (global-unset-key (kbd "<right>"))
@@ -108,18 +110,34 @@
   (global-unset-key (kbd "<home>"))
   (global-unset-key (kbd "<end>"))
   (global-unset-key (kbd "<insert>"))
-  (global-unset-key (kbd "<delete>")))
+  (global-unset-key (kbd "<delete>"))
+  (setq slowpoke-keys? nil)
+  (message "Unset slowpoke keys."))
 
-(defun no-home-row ()
+(defun set-slowpoke-keys ()
   (interactive)
+  (setq slowpoke-keys? nil)
   (global-set-key (kbd "<left>") 'backward-char)
   (global-set-key (kbd "<right>") 'forward-char)
   (global-set-key (kbd "<up>") 'previous-line)
   (global-set-key (kbd "<down>") 'next-line)
   (global-set-key (kbd "<C-left>") 'backward-word)
-  (global-set-key (kbd "<C-right>") 'forward-word))
+  (global-set-key (kbd "<C-right>") 'forward-word)
+  (global-set-key (kbd "<home>") 'move-beginning-of-line)
+  (global-set-key (kbd "<end>") 'move-end-of-line)
+  (global-set-key (kbd "<prior>") 'scroll-down-command)
+  (global-set-key (kbd "<next>") 'scroll-up-command)
+  (setq slowpoke-keys? 1)
+  (message "Set slowpoke keys."))
 
-(home-row)
+(defun toggle-slowpoke-keys ()
+  (interactive)
+  (if slowpoke-keys?
+    (unset-slowpoke-keys)
+    (set-slowpoke-keys)))
+
+;; By default, unset slowpoke keys.
+(unset-slowpoke-keys)
 
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
