@@ -137,15 +137,15 @@
     (set-slowpoke-keys)))
 
 ;; By default, unset slowpoke keys.
-(unset-slowpoke-keys)
+;; (unset-slowpoke-keys)
 
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
 
 ;; Binds for SSH terminal use
-(global-set-key (kbd "<deletechar>") 'backward-kill-word)
-(global-set-key (kbd "TAB") 'indent-for-tab-command)
+;; (global-set-key (kbd "<deletechar>") 'backward-kill-word)
+;; (global-set-key (kbd "TAB") 'indent-for-tab-command)
 
 (global-set-key (kbd "M-i") 'paredit-backward-slurp-sexp)
 (global-set-key (kbd "M-o") 'paredit-forward-slurp-sexp)
