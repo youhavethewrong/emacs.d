@@ -187,6 +187,7 @@
  ;; If there is more than one, they won't work right.
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
+ '(magit-git-executable "/usr/bin/git")
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
