@@ -85,7 +85,21 @@
      (add-to-list 'ac-modes 'cider-mode)
      (add-to-list 'ac-modes 'cider-repl-mode)))
 
-(put-clojure-indent 'match 1)
+;; Indentation
+(put-clojure-indent 'match 1)   ;; clojure.core.match
+(put-clojure-indent 'fdef 1)    ;; clojure.spec
+(put-clojure-indent 'for-all 1) ;; clojure.test.check
 
 ;; ClojureScript repl
 (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+;; Toggles cider-error buffer pop-up on exceptions
+(defun cider-toggle-auto-select-error-buffer ()
+  (interactive)
+  (if cider-auto-select-error-buffer
+      (progn
+        (setq cider-auto-select-error-buffer nil)
+        (message "Disabled."))
+      (progn
+        (setq cider-auto-select-error-buffer t)
+        (message "Enabled."))))
