@@ -97,6 +97,8 @@
     ;; elixir
     elixir-mode
 
+    ;; fsharp
+    fsharp-mode
     ))
 
 (dolist (p my-packages)
@@ -183,12 +185,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default))))
+    ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+ '(magit-git-executable "/usr/bin/git"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

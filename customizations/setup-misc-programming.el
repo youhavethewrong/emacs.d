@@ -20,3 +20,6 @@
 ;; make java indentation friendly
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 4)))
+
+;; subword hopping is nice
+(add-hook 'java-mode-hook 'subword-mode)
