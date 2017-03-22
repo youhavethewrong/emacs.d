@@ -150,11 +150,12 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
-;; Work plugins
+;; Build tools
 (load "maven.el")
-(load "gosling.el")
-(load "tape.el")
 (load "lein.el")
+
+;; Work-specific functions
+(load "work.el")
 
 ;; Hard-to-categorize customizations
 (load "misc.el")

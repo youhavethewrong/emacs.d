@@ -136,8 +136,6 @@
     (unset-slowpoke-keys)
     (set-slowpoke-keys)))
 
-;; By default, unset slowpoke keys.
-;; (unset-slowpoke-keys)
 
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
