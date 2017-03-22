@@ -152,7 +152,7 @@
 
 ;; Build tools
 (load "maven.el")
-(load "gosling.el")
+(load "lein.el")
 
 ;; Work-specific functions
 (load "work.el")
