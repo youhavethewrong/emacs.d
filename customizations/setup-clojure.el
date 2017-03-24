@@ -15,42 +15,23 @@
 ;; Clojure refactoring
 (require 'clj-refactor)
 
-;; syntax hilighting for midje
-(add-hook 'clojure-mode-hook
-          (lambda ()
-            (setq inferior-lisp-program "lein repl")
-            (font-lock-add-keywords
-             nil
-             '(("(\\(facts?\\)"
-                (1 font-lock-keyword-face))
-               ("(\\(background?\\)"
-                (1 font-lock-keyword-face))))
-            (define-clojure-indent (fact 1))
-            (define-clojure-indent (facts 1))
-            (clj-refactor-mode 1)
-            (cljr-add-keybindings-with-prefix "C-c C-m")))
-
 ;;;;
-;; Cider
+;; CIDER
 ;;;;
 
-;; provides minibuffer documentation for the code you're typing into the repl
+;; Provides minibuffer documentation for the code you're typing into the RPL
 (add-hook 'cider-mode-hook 'eldoc-mode)
 
-;; go right to the REPL buffer when it's finished connecting
+;; Go right to the REPL buffer when it's finished connecting
 (setq cider-repl-pop-to-buffer-on-connect t)
 
-;; When there's a cider error, show its buffer and switch to it
-(setq cider-show-error-buffer t)
-(setq cider-auto-select-error-buffer t)
-
-;; Where to store the cider history.
+;; Where to store history
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 
-;; Wrap when navigating history.
+;; Wrap when navigating history
 (setq cider-repl-wrap-history t)
 
-;; enable paredit in your REPL
+;; Enable paredit in the REPL
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;; Use clojure mode for other extensions
@@ -60,23 +41,22 @@
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
 ;; Wrap cider-refresh with system lifecycle functions from user namespace.
-;; Run cider-refresh with C-c C-x.
 (setq cider-refresh-before-fn "user/stop"
       cider-refresh-after-fn "user/go")
 
+;; Switch to user namespace
 (defun cider-user-ns ()
   (interactive)
   (cider-repl-set-ns "user"))
 
+;; Custom shortcuts
 (eval-after-load 'cider
   '(progn
-     (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
 
-;; TODO
-
+;; Autocomplete
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
@@ -85,13 +65,17 @@
      (add-to-list 'ac-modes 'cider-mode)
      (add-to-list 'ac-modes 'cider-repl-mode)))
 
-;; Indentation
+;; Custom indentation for functions
 (put-clojure-indent 'match 1)   ;; clojure.core.match
 (put-clojure-indent 'fdef 1)    ;; clojure.spec
 (put-clojure-indent 'for-all 1) ;; clojure.test.check
 
-;; ClojureScript repl
+;; ClojureScript REPL
 (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+
+;; When there's an error, show its buffer and switch to it
+(setq cider-show-error-buffer t)
+(setq cider-auto-select-error-buffer t)
 
 ;; Toggles cider-error buffer pop-up on exceptions
 (defun cider-toggle-auto-select-error-buffer ()
