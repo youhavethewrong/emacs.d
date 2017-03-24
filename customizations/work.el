@@ -14,3 +14,7 @@
   (interactive)
   (service-flow)
   (isearch-forward))
+
+;; For Velocity templates
+(require 'vtl)
+(add-to-list 'auto-mode-alist '("\\.vm$" . turn-on-vtl-mode))
