@@ -25,7 +25,6 @@
 ;; Go right to the REPL buffer when it's finished connecting
 (setq cider-repl-pop-to-buffer-on-connect t)
 
-
 ;; Where to store history
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 
