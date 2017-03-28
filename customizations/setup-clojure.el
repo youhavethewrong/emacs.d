@@ -15,12 +15,20 @@
 ;; Clojure refactoring
 (require 'clj-refactor)
 
+(defun enable-cljr ()
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  (cljr-add-keybindings-with-prefix "C-c C-r"))
+
+(add-hook 'clojure-mode-hook 'enable-cljr)
+
 ;;;;
 ;; CIDER
 ;;;;
 
 ;; Provides minibuffer documentation for the code you're typing into the RPL
 (add-hook 'cider-mode-hook 'eldoc-mode)
+
 
 ;; Go right to the REPL buffer when it's finished connecting
 (setq cider-repl-pop-to-buffer-on-connect t)
