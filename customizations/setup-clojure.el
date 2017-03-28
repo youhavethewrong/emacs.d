@@ -31,12 +31,16 @@
 ;; Wrap when navigating history
 (setq cider-repl-wrap-history t)
 
+;; When evaluating a buffer, just save without prompting
+(setq cider-prompt-save-file-on-load 'always-save)
+
 ;; Enable paredit in the REPL
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljc$" . clojurec-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojurescript-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
