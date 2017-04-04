@@ -66,7 +66,9 @@
   '(progn
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
-     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
+     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)
+     ;; don't want complete-symbol to override our paredit bindings
+     (define-key cider-mode-map (kbd "C-M-i") 'paredit-backward-barf-sexp)))
 
 ;; Autocomplete
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
