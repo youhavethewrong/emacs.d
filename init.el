@@ -105,6 +105,12 @@
 
     ;; mark 80 columns
     column-marker
+
+    ;; JSX support
+    jsx-mode
+
+    ;; Make JS and JSX pretty
+    js-auto-beautify
     ))
 
 (dolist (p my-packages)
