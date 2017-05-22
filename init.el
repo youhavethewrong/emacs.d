@@ -107,7 +107,7 @@
     column-marker
 
     ;; JSX support
-    jsx-mode
+    rjsx-mode
 
     ;; Make JS and JSX pretty
     js-auto-beautify
