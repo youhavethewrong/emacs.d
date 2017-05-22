@@ -99,6 +99,12 @@
 
     ;; fsharp
     fsharp-mode
+
+    ;; notice the cursor when jumping around
+    beacon
+
+    ;; mark 80 columns
+    column-marker
     ))
 
 (dolist (p my-packages)
@@ -188,13 +194,16 @@
  ;; If there is more than one, they won't work right.
  '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
- '(cljr-favor-prefix-notation nil)
  '(cider-pprint-fn "fipp")
+ '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
     ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
- '(magit-git-executable "/usr/bin/git"))
+ '(magit-git-executable "/usr/bin/git")
+ '(package-selected-packages
+   (quote
+    (column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
