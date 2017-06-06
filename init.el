@@ -88,6 +88,9 @@
     ;; turn off line numbering sometimes
     linum-off
 
+    ;; nicer than M-x shell
+    better-shell
+
     ;; haskell
     haskell-mode
 
