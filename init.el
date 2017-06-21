@@ -79,6 +79,9 @@
     ;; increment and decrement number easily
     evil-numbers
 
+    ;; lots of neat Lisp editing features with a hybrid emacs/vi control scheme
+    lispy
+
     ;; clojure refactoring
     clj-refactor
 
