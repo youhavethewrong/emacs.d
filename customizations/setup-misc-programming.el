@@ -19,3 +19,6 @@
 
 ;; subword hopping is nice
 (add-hook 'java-mode-hook 'subword-mode)
+
+;; set a prompt for sybase
+(setq sql-sybase-options '("--prompt=SQL> "))

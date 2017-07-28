@@ -3,8 +3,8 @@
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'html-mode-hook 'subword-mode)
 
-(setq js2-basic-offset 2)
-(setq js-indent-level 2)
+(setq js2-basic-offset 4)
+(setq js-indent-level 4)
 (eval-after-load "sgml-mode"
   '(progn
      (require 'tagedit)
