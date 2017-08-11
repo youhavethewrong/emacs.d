@@ -1,11 +1,11 @@
-(define-package "clj-refactor" "2.3.1" "A collection of clojure refactoring functions"
+(define-package "clj-refactor" "20161127.1306" "A collection of clojure refactoring functions"
   '((emacs "24.4")
     (s "1.8.0")
-    (seq "2.19")
+    (dash "2.4.0")
     (yasnippet "0.6.1")
     (paredit "24")
     (multiple-cursors "1.2.2")
-    (clojure-mode "5.6.1")
+    (clojure-mode "20160604")
     (cider "0.11.0")
     (edn "1.1.2")
     (inflections "2.3")

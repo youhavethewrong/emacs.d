@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "clj-refactor" "clj-refactor.el" (22925 59918
-;;;;;;  587247 667000))
+;;;### (autoloads nil "clj-refactor" "clj-refactor.el" (22593 36764
+;;;;;;  980579 915000))
 ;;; Generated autoloads from clj-refactor.el
 
 (autoload 'cljr-add-keybindings-with-prefix "clj-refactor" "\
@@ -122,7 +122,7 @@ The resulting let form can then be expanded with `\\[cljr-expand-let]'.
 
 See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-introduce-let
 
-\(fn &optional N)" t nil)
+\(fn)" t nil)
 
 (autoload 'cljr-expand-let "clj-refactor" "\
 Expand the let form above point by one level.
@@ -326,14 +326,12 @@ If injecting the dependencies is not preferred set `cljr-inject-dependencies-at-
 (autoload 'clj-refactor-mode "clj-refactor" "\
 A mode to keep the clj-refactor keybindings.
 
-\\{clj-refactor-map}
-
 \(fn &optional ARG)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("clj-refactor-compat.el" "clj-refactor-pkg.el")
-;;;;;;  (22925 59918 606909 164000))
+;;;### (autoloads nil nil ("clj-refactor-pkg.el") (22593 36764 997317
+;;;;;;  382000))
 
 ;;;***
 
