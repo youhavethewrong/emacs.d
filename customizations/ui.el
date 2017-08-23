@@ -77,6 +77,8 @@
   scroll-preserve-screen-position 1)
 
 ;; If we're using a graphical display, make it pretty
-(when (display-graphic-p)
-    (load-theme 'leuven t)
-    (powerline-default-theme))
+(if (display-graphic-p)
+    (progn
+      (load-theme 'leuven t)
+      (powerline-default-theme))
+  (load-theme 'espresso t))

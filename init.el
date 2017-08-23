@@ -1,4 +1,3 @@
-
 ;; Packages
 (require 'package)
 (add-to-list 'package-archives
@@ -114,6 +113,9 @@
 
     ;; Make JS and JSX pretty
     js-auto-beautify
+
+    ;; Nice theme when using terminals
+    espresso-theme
     ))
 
 (dolist (p my-packages)
@@ -208,7 +210,7 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+    ("5acb6002127f5d212e2d31ba2ab5503df9cd1baa1200fbb5f57cc49f6da3056d" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
@@ -218,4 +220,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
  '(column-marker-3 ((t (:background "peach puff")))))
