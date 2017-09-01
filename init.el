@@ -178,6 +178,9 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
+;; Make mouse behavior more predictable.
+(load "mouse.el")
+
 ;; For editing lisps
 (load "elisp-editing.el")
 
