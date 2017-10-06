@@ -67,3 +67,10 @@
 
 ;; beacon mode everywhere!  It helps you find the cursor.
 (beacon-mode 1)
+
+;; easily swap buffers
+(require 'buffer-move)
+(global-set-key (kbd "<C-S-up>")     'buf-move-up)
+(global-set-key (kbd "<C-S-down>")   'buf-move-down)
+(global-set-key (kbd "<C-S-left>")   'buf-move-left)
+(global-set-key (kbd "<C-S-right>")  'buf-move-right)
