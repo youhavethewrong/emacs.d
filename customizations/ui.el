@@ -81,4 +81,4 @@
     (progn
       (load-theme 'leuven t)
       (powerline-default-theme))
-  (load-theme 'espresso t))
+  (load-theme 'cyberpunk t))
