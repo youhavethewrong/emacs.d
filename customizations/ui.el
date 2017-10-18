@@ -79,6 +79,6 @@
 ;; If we're using a graphical display, make it pretty
 (if (display-graphic-p)
     (progn
-      (load-theme 'leuven t)
+      (load-theme 'cyberpunk t)
       (powerline-default-theme))
   (load-theme 'cyberpunk t))
