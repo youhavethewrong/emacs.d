@@ -209,6 +209,7 @@
  ;; If there is more than one, they won't work right.
  '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
+ '(browse-url-firefox-program "~/bin/ff")
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
