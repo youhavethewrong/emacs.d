@@ -44,6 +44,9 @@
     ;; groovy
     groovy-mode
 
+    ;; rust language
+    rust-mode
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
