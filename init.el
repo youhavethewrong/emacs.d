@@ -119,6 +119,9 @@
 
     ;; Nice theme when using terminals
     espresso-theme
+
+    ;; Nice theme when using high-color terminals
+    cyberpunk-theme
     ))
 
 (dolist (p my-packages)

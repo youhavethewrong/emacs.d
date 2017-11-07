@@ -1,10 +1,10 @@
 ;;; better-shell-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "better-shell" "better-shell.el" (22838 58550
-;;;;;;  534117 687000))
+;;;### (autoloads nil "better-shell" "better-shell.el" (23041 56960
+;;;;;;  937651 918000))
 ;;; Generated autoloads from better-shell.el
 
 (autoload 'better-shell-remote-open "better-shell" "\

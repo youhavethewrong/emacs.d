@@ -1,10 +1,10 @@
 ;;; js-auto-beautify-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-(add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "js-auto-beautify" "js-auto-beautify.el" (22819
-;;;;;;  9655 687724 633000))
+;;;### (autoloads nil "js-auto-beautify" "js-auto-beautify.el" (23041
+;;;;;;  56965 505721 97000))
 ;;; Generated autoloads from js-auto-beautify.el
 
 (autoload 'js-auto-beautify-mode "js-auto-beautify" "\
