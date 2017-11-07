@@ -85,7 +85,7 @@
 (put-clojure-indent 'for-all 1) ;; clojure.test.check
 
 ;; ClojureScript REPL
-(setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
+(setq cider-cljs-lein-repl "(cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env))")
 
 ;; When there's an error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
