@@ -101,3 +101,5 @@
       (progn
         (setq cider-auto-select-error-buffer t)
         (message "Enabled."))))
+
+(setq cider-lein-parameters "repl :headless :host localhost")
