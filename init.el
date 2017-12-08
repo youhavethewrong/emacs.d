@@ -216,6 +216,8 @@
  '(beacon-color "goldenrod")
  '(browse-url-browser-function (quote browse-url-firefox))
  '(browse-url-firefox-program "~/bin/ff")
+ '(cider-cljs-lein-repl
+   "(do (require 'cljs.repl.node) (cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env)))")
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes

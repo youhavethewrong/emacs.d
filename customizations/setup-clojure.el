@@ -84,9 +84,6 @@
 (put-clojure-indent 'fdef 1)    ;; clojure.spec
 (put-clojure-indent 'for-all 1) ;; clojure.test.check
 
-;; ClojureScript REPL
-(setq cider-cljs-lein-repl "(cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env))")
-
 ;; When there's an error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
 (setq cider-auto-select-error-buffer t)
