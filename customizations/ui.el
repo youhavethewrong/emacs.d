@@ -82,3 +82,21 @@
       (load-theme 'cyberpunk t)
       (powerline-default-theme))
   (load-theme 'cyberpunk t))
+
+(defun disable-all-themes ()
+  (mapcar
+   (lambda (theme) (funcall 'disable-theme theme))
+   (custom-available-themes)))
+
+;; make it easy to switch back and forth depending on light conditions
+(defun bright-theme ()
+  (interactive)
+  (progn
+    (disable-all-themes)
+    (load-theme 'leuven t)))
+
+(defun dark-theme ()
+  (interactive)
+  (progn
+    (disable-all-themes)
+    (load-theme 'cyberpunk t)))
