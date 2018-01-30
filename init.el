@@ -93,6 +93,9 @@
     ;; nicer than M-x shell
     better-shell
 
+    ;; better shell on mac and win
+    exec-path-from-shell
+
     ;; haskell
     haskell-mode
 
