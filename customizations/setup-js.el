@@ -1,11 +1,14 @@
-;; javascript / html
-(add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+;; javascript
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (add-hook 'js-mode-hook 'subword-mode)
-(add-hook 'html-mode-hook 'subword-mode)
+(add-hook 'js-mode-hook 'prettier-js-mode)
 
-(setq js2-basic-offset 4)
-(setq js-indent-level 4)
+;; jsx
+(add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+(add-hook 'rjsx-mode 'prettier-js-mode)
+
+;; html
+(add-hook 'html-mode-hook 'subword-mode)
 (eval-after-load "sgml-mode"
   '(progn
      (require 'tagedit)

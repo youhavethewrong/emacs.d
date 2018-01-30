@@ -117,6 +117,9 @@
     ;; Make JS and JSX pretty
     js-auto-beautify
 
+    ;; Another wayt o make some stuff pretty
+    prettier-js
+
     ;; Nice theme when using terminals
     espresso-theme
 
@@ -226,7 +229,7 @@
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
+    (prettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
