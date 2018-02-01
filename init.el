@@ -123,6 +123,9 @@
     ;; Another wayt o make some stuff pretty
     prettier-js
 
+    ;; indium is another javascript IDE
+    indium
+
     ;; Nice theme when using terminals
     espresso-theme
 
