@@ -108,6 +108,10 @@
     ;; fsharp
     fsharp-mode
 
+    ;; scala
+    scala-mode
+    ensime
+
     ;; notice the cursor when jumping around
     beacon
 
