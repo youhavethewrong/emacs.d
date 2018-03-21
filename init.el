@@ -190,6 +190,7 @@
 ;; Build tools
 (load "maven.el")
 (load "lein.el")
+(load "npm.el")
 
 ;; Work-specific functions
 (load "work.el")
