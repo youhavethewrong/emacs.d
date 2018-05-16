@@ -38,6 +38,9 @@
     ;; autocomplete assistance from CIDER
     ac-cider
 
+    ;; terraform cloud automation file format support
+    terraform-mode
+
     ;; clojure cheatsheet for handy referencing
     clojure-cheatsheet
 
@@ -244,7 +247,7 @@
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (cargo prettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
+    (terraform-mode cargo prettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
