@@ -240,6 +240,7 @@
    "(do (require 'cljs.repl.node) (cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env)))")
  '(cljr-favor-prefix-notation nil)
  '(coffee-tab-width 2)
+ '(confirm-kill-emacs (quote y-or-n-p))
  '(custom-safe-themes
    (quote
     ("5acb6002127f5d212e2d31ba2ab5503df9cd1baa1200fbb5f57cc49f6da3056d" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
