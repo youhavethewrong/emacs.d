@@ -21,10 +21,10 @@
 ;;; Commentary:
 
 ;; Minor mode for interacting with a JavaScript runtime.  This mode provides
-;; commands for managing breakpoints and evaluating code.
+;; commands connecting to a runtime, managing breakpoints and evaluating code.
 
 ;;; Code:
-
+
 (require 'js2-mode)
 (require 'map)
 (require 'seq)
@@ -32,6 +32,7 @@
 (require 'xref)
 (require 'easymenu)
 
+(require 'indium-workspace)
 (require 'indium-backend)
 (require 'indium-inspector)
 (require 'indium-breakpoint)
@@ -42,8 +43,75 @@
 (declare-function indium-backend-deactivate-breakpoints "indium-backend.el")
 (declare-function indium-workspace-make-url "indium-workspace.el")
 
+(declare-function indium-connect-to-chrome "indium-chrome.el")
+(declare-function indium-connect-to-nodejs "indium-nodejs.el")
+(declare-function indium-launch-chrome "indium-chrome.el")
+(declare-function indium-launch-nodejs "indium-nodejs.el")
+
 (defvar indium-update-script-source-hook nil
   "Hook run when script source is updated.")
+
+
+;;;###autoload
+(defun indium-connect ()
+  "Open a new connection to a runtime."
+  (interactive)
+  (indium-maybe-quit)
+  (unless-indium-connected
+    (indium-workspace-read-configuration)
+    (pcase (map-elt indium-workspace-configuration 'type)
+      ("node" (indium-connect-to-nodejs))
+      ("chrome" (indium-connect-to-chrome))
+      (_ (user-error "Invalid project type, check the .indium.json project file")))))
+
+;;;###autoload
+(defun indium-launch ()
+  "Start a process (web browser or NodeJS) and attempt to connect to it."
+  (interactive)
+  (indium-maybe-quit)
+  (unless-indium-connected
+    (indium-workspace-read-configuration)
+    (pcase (map-elt indium-workspace-configuration 'type)
+      ("node" (indium-launch-nodejs))
+      ("chrome" (indium-launch-chrome))
+      (_ (user-error "Invalid project type, check the .indium.json project file")))))
+
+(defun indium-quit ()
+  "Close the current connection and kill its REPL buffer if any.
+If a process is attached to the connection, kill it as well.
+When called interactively, prompt for a confirmation first."
+  (interactive)
+  (unless-indium-connected
+    (user-error "No active connection to close"))
+  (when (or (not (called-interactively-p 'interactive))
+            (y-or-n-p (format "Do you really want to close the connection to %s ? "
+                              (indium-current-connection-url))))
+    (let ((process (indium-current-connection-process)))
+      (indium-backend-close-connection (indium-current-connection-backend))
+      (indium-backend-cleanup-buffers)
+      (when (and process
+		 (memq (process-status process)
+		       '(run stop open listen)))
+	(kill-process process))
+      (setq indium-current-connection nil)
+      (setq indium-workspace-configuration nil))))
+
+(defun indium-maybe-quit ()
+  "Close the current connection.
+
+Unlike `indium-quit', do not signal an error when there is no
+active connection."
+  (when-indium-connected
+    (call-interactively #'indium-quit)))
+
+(defun indium-reconnect ()
+  "Try to re-establish a connection.
+The new connection is based on the current (usually closed) one."
+  (interactive)
+  (unless-indium-connected
+    (user-error "No Indium connection to reconnect to"))
+  (indium-backend-reconnect (indium-current-connection-backend)))
+
 
 (defun indium-eval (string &optional callback)
   "Evaluate STRING on the current backend.

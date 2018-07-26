@@ -116,9 +116,9 @@ Evaluate CALLBACK on the filtered candidates."
 
 (cl-defmethod indium-backend-register-breakpoint ((_backend (eql v8)) breakpoint &optional callback)
   "Request the addition of BREAKPOINT."
-  (let* ((location (indium-breakpoint-location breakpoint))
+  (let* ((location (indium-breakpoint-generated-location breakpoint))
 	 (file (indium-location-file location))
-	 (url (indium-workspace-make-url file)))
+	 (url file))
     (unless url
       (user-error "No URL associated with the current buffer.  Setup an Indium workspace first"))
     (indium-v8--send-request
@@ -133,7 +133,7 @@ Evaluate CALLBACK on the filtered candidates."
               (locations (map-elt result 'locations))
 	      (location (seq--elt-safe locations 0))
               (line (map-elt location 'lineNumber)))
-	 (setf (indium-breakpoint-id breakpoint) id)
+	 (indium-breakpoint-register breakpoint id)
 	 (if line
 	     (let ((script (indium-script-find-by-id
 			    (map-elt location 'scriptId)))
@@ -288,7 +288,7 @@ Allowed states: `\"none\"', `\"uncaught\"', `\"all\"'."
   (setq indium-v8-cache-disabled t)
   (indium-v8--set-cache-disabled t))
 
-(defun indium-v8--open-ws-connection (url websocket-url &optional on-open nodejs workspace)
+(defun indium-v8--open-ws-connection (url websocket-url &optional on-open nodejs)
   "Open a websocket connection to URL using WEBSOCKET-URL.
 
 Evaluate ON-OPEN when the websocket is open, before setting up
@@ -298,15 +298,12 @@ In a Chrom{e|ium} session, URL corresponds to the url of a tab,
 and WEBSOCKET-URL to its associated `webSocketDebuggerUrl'.
 
 If NODEJS is non-nil, add a `nodejs' flag to the
-`indium-current-connection' to handle special cases.
-
-If WORKSPACE is non-nil, make it the workspace directory for that
-connection."
+`indium-current-connection' to handle special cases."
   (unless websocket-url
     (user-error "Cannot open connection, another devtools instance might be open"))
   (websocket-open websocket-url
                   :on-open (lambda (ws)
-			     (indium-v8--handle-ws-open ws url nodejs workspace)
+			     (indium-v8--handle-ws-open ws url nodejs)
 			     (when on-open
                                (funcall on-open)))
                   :on-message #'indium-v8--handle-ws-message
@@ -319,22 +316,21 @@ If NODEJS is non-nil, add a `nodejs' extra property to the
 connection."
   (let ((conn (make-indium-connection
 	       :backend 'v8
-	       :url url)))
+	       :url url
+	       :project-root (indium-workspace-root))))
     (setf (indium-connection-ws conn) ws)
     (when nodejs
       (map-put (indium-connection-props conn) 'nodejs t))
     conn))
 
-(defun indium-v8--handle-ws-open (ws url nodejs workspace)
+(defun indium-v8--handle-ws-open (ws url nodejs)
   "Setup indium for a new connection for the websocket WS.
 URL points to the browser tab.
 
-If NODEJS is non-nil, set an extra property in the connection.
-If WORKSPACE is non-nil, make it the workspace used for the connection."
+If NODEJS is non-nil, set an extra property in the connection."
   (setq indium-current-connection (indium-v8--make-connection ws url nodejs))
   (indium-v8--enable-tools)
   (switch-to-buffer (indium-repl-get-buffer-create))
-  (when workspace (cd workspace))
   (run-hooks 'indium-connection-open-hook))
 
 (defun indium-v8--handle-ws-message (_ws frame)
@@ -485,7 +481,8 @@ inspectors."
    '((method . "Debugger.enable"))
    (lambda (&rest _)
      (indium-v8-set-pause-on-exceptions "uncaught")
-     (indium-v8--set-blackbox-patterns indium-debugger-blackbox-regexps))))
+     (when indium-debugger-blackbox-regexps
+       (indium-v8--set-blackbox-patterns indium-debugger-blackbox-regexps)))))
 
 (defun indium-v8--set-blackbox-patterns (regexps)
   "Replace previous blackbox patterns with passed REGEXPS."
@@ -673,8 +670,7 @@ If INTERNAL-PROPERTIES is non-nil, also add them."
       (map-put result 'lineNumber line))
     (when-let ((column (indium-location-column location)))
       (map-put result 'columnNumber column))
-    (when-let ((file (indium-location-file location))
-	       (script (indium-script-find-from-file file)))
+    (when-let ((script (indium-script-find-from-location location)))
       (map-put result 'scriptId (indium-script-id script)))
     result))
 

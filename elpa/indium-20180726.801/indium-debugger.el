@@ -186,14 +186,15 @@ remote source for that frame."
   (indium-debugger-litable-setup-buffer)
   (if buffer-file-name
       (indium-debugger-setup-buffer-with-file)
-    (message "Downloading script source for debugging...")
-    (indium-backend-get-script-source
+    (progn
+      (message "Downloading script source for debugging...")
+      (indium-backend-get-script-source
        (indium-current-connection-backend)
        frame
        (lambda (source)
          (indium-debugger-setup-buffer-with-source
           (map-nested-elt source '(result scriptSource)))
-	 (message "Downloading script source for debugging...done!")))))
+	 (message "Downloading script source for debugging...done!"))))))
 
 (defun indium-debugger-setup-buffer-with-file ()
   "Setup the current buffer for debugging."
@@ -312,9 +313,7 @@ remote source for that frame."
 When the position of the point is reached, pause the execution."
   (interactive)
   (indium-backend-continue-to-location (indium-current-connection-backend)
-				       (make-indium-location
-					:line (1- (line-number-at-pos))
-					:file buffer-file-name)))
+				       (indium-script-generated-location-at-point)))
 
 (defun indium-debugger-evaluate (expression)
   "Prompt for EXPRESSION to be evaluated.
@@ -384,9 +383,10 @@ CALLBACK is evaluated with two arguments, the properties and SCOPE."
 
 If a buffer already exists, just return it."
   (let* ((location (indium-script-get-frame-original-location (indium-current-connection-current-frame)))
-	 (buf (if-let ((file (indium-location-file location)))
-                 (find-file file)
-               (get-buffer-create (indium-debugger--buffer-name-no-file)))))
+	 (file (indium-location-file location))
+	 (buf (if (and file (file-exists-p file))
+                  (find-file file)
+		(get-buffer-create (indium-debugger--buffer-name-no-file)))))
     (indium-debugger-setup-buffer buf)
     buf))
 
