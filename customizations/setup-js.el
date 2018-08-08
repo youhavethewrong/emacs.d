@@ -1,7 +1,10 @@
+(require 'indium)
+
 ;; javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'js-mode-hook 'prettier-js-mode)
+(add-hook 'js-mode-hook 'indium-interaction-mode)
 (setq js2-basic-offset 2)
 (setq js-indent-level 2)
 
