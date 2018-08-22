@@ -91,7 +91,7 @@
     evil-numbers
 
     ;; clojure refactoring
-    clj-refactor
+    ;;clj-refactor
 
     ;; make the mode line look neat
     powerline
@@ -253,7 +253,7 @@
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
+    (indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
