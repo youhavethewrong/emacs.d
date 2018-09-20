@@ -139,6 +139,9 @@
     ;; indium is another javascript IDE
     indium
 
+    ;; restclient lets me make HTTP calls in emacs
+    restclient
+
     ;; Nice theme when using terminals
     espresso-theme
 
