@@ -53,6 +53,12 @@
     ;; cargo package manager for rust
     cargo
 
+    ;; code completion for rust
+    racer
+
+    ;; company support for racer
+    company-racer
+
     ;; toml is the markup that cargo manifests are written in
     toml-mode
 
@@ -221,6 +227,7 @@
 (load "setup-groovy.el")
 (load "setup-js.el")
 (load "setup-misc-programming.el")
+(load "setup-rust.el")
 
 ;; IRC
 (load "irc.el")
