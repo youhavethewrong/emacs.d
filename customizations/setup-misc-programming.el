@@ -2,6 +2,7 @@
 ;; All languages
 ;;;;
 (add-hook 'prog-mode-hook 'idle-highlight-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (require 'column-marker)
 (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 132)))
