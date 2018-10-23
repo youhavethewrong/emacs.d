@@ -276,4 +276,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:background nil))))
- '(column-marker-3 ((t (:background "peach puff")))))
+ '(column-marker-3 ((t (:background "peach puff"))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "hot pink"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "SpringGreen2"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "firebrick1"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "DodgerBlue1")))))
