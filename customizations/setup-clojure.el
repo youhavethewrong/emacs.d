@@ -3,7 +3,7 @@
 ;;;;
 
 ;; Enable paredit for Clojure
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)
@@ -20,7 +20,6 @@
 ;;  (yas-minor-mode 1) ; for adding require/use/import statements
 ;;  (cljr-add-keybindings-with-prefix "C-c C-r"))
 
-(add-hook 'clojure-mode-hook 'enable-cljr)
 
 ;;;;
 ;; CIDER
