@@ -154,9 +154,6 @@
     ;; Nice theme when using high-color terminals
     cyberpunk-theme
 
-    ;; another theme
-    sublime-themes
-
     ;; make nested delimiters easier to pair off
     rainbow-delimiters
     ))
