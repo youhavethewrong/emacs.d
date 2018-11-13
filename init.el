@@ -156,6 +156,9 @@
 
     ;; make nested delimiters easier to pair off
     rainbow-delimiters
+
+    ;; cycle through casing types
+    string-inflection
     ))
 
 (dolist (p my-packages)
