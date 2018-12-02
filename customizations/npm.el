@@ -18,4 +18,4 @@
       (if (s-blank? input) default-term input))))
   (npm-in-project
    (lambda (d)
-     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=build --exclude-dir=reference --exclude-dir=resources --exclude-dir=coverage --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
+     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=public --exclude-dir=build --exclude-dir=reference --exclude-dir=resources --exclude-dir=coverage --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
