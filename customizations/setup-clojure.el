@@ -13,12 +13,12 @@
 (require 'clojure-mode-extra-font-locking)
 
 ;; Clojure refactoring
-;;(require 'clj-refactor)
+(require 'clj-refactor)
 
-;;(defun enable-cljr ()
-;;  (clj-refactor-mode 1)
-;;  (yas-minor-mode 1) ; for adding require/use/import statements
-;;  (cljr-add-keybindings-with-prefix "C-c C-r"))
+(defun enable-cljr ()
+ (clj-refactor-mode 1)
+ (yas-minor-mode 1) ; for adding require/use/import statements
+ (cljr-add-keybindings-with-prefix "C-c C-r"))
 
 
 ;;;;
