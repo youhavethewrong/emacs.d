@@ -33,6 +33,12 @@
                                       (other-window 1)
                                       (xwidget-browse-url-no-reuse url))))
 
-(when (string-equal system-type "darwin")
-  (setq browse-url-browser-function (quote browse-url-generic))
-  (setq browse-url-generic-program "open"))
+(if (string-equal system-type "darwin")
+    ;; browsing on macOS
+    (progn
+      (setq browse-url-browser-function (quote browse-url-generic))
+      (setq browse-url-generic-program "open"))
+  ;; browsing elsewhere
+  (progn
+    (setq browse-url-browser-function (quote browse-url-firefox))
+    (setq browse-url-firefox-program "~/bin/ff")))
