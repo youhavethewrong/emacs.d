@@ -79,9 +79,9 @@
 ;; If we're using a graphical display, make it pretty
 (if (display-graphic-p)
     (progn
-      (load-theme 'cyberpunk t)
+      (load-theme 'leuven t)
       (powerline-default-theme))
-  (load-theme 'cyberpunk t))
+  (load-theme 'leuven t))
 
 (defun disable-all-themes ()
   (mapcar
