@@ -136,7 +136,6 @@
     (unset-slowpoke-keys)
     (set-slowpoke-keys)))
 
-
 ;; Bind keys to work like pgup and pgdn
 (global-set-key (kbd "M-n") 'scroll-up-command)
 (global-set-key (kbd "M-p") 'scroll-down-command)
@@ -150,3 +149,6 @@
 
 (global-set-key (kbd "C-M-i") 'paredit-backward-barf-sexp)
 (global-set-key (kbd "C-M-o") 'paredit-forward-barf-sexp)
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

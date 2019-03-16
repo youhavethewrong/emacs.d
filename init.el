@@ -72,6 +72,9 @@
     ;; http://www.emacswiki.org/emacs/Smex
     smex
 
+    ;; org bullets for fancy bullets in org mode
+    org-bullets
+
     ;; project navigation
     projectile
 
