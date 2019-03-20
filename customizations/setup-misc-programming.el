@@ -5,7 +5,7 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (require 'column-marker)
-(add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 132)))
+(add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100)))
 
 ;; ;; regular auto-complete initialization
 ;;  (require 'auto-complete-config)
