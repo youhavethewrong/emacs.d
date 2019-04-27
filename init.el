@@ -126,6 +126,9 @@
     ;; fsharp
     fsharp-mode
 
+    ;; powershell
+    powershell
+
     ;; scala
     scala-mode
     ensime
@@ -271,6 +274,7 @@
  '(package-selected-packages
    (quote
     (indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider)))
+ '(prettier-js-width-mode nil)
  '(rust-format-on-save t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
