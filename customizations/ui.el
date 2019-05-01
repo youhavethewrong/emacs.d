@@ -95,6 +95,12 @@
     (disable-all-themes)
     (load-theme 'leuven t)))
 
+(defun dark-theme-alt ()
+  (interactive)
+  (progn
+    (disable-all-themes)
+    (load-theme 'tsdh-dark t)))
+
 (defun dark-theme ()
   (interactive)
   (progn
