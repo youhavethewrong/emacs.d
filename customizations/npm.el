@@ -7,6 +7,12 @@
       (error "Not inside an NPM project!"))))
 
 (defvar npm-grep-history nil)
+
+(defvar search-tool
+  (if (executable-find "rg")
+      "rg -i -H --no-heading -e \""
+    "grep --color --exclude-dir=.git --exclude-dir=public --exclude-dir=build --exclude-dir=reference --exclude-dir=resources --exclude-dir=coverage --exclude-dir=node_modules -nriH -e \""))
+
 (defun npm-grep (term)
   (interactive
    (list
@@ -18,4 +24,4 @@
       (if (s-blank? input) default-term input))))
   (npm-in-project
    (lambda (d)
-     (grep (concat "grep --color --exclude-dir=.git --exclude-dir=public --exclude-dir=build --exclude-dir=reference --exclude-dir=resources --exclude-dir=coverage --exclude-dir=node_modules -nriH -e \"" term "\" " d)))))
+     (grep (concat search-tool term "\" " d)))))

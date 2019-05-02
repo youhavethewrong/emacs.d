@@ -260,6 +260,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
  '(beacon-color "goldenrod")
  '(cider-cljs-lein-repl
    "(do (require 'cljs.repl.node) (cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env)))")
@@ -268,16 +270,14 @@
  '(confirm-kill-emacs (quote y-or-n-p))
  '(custom-safe-themes
    (quote
-    ("5acb6002127f5d212e2d31ba2ab5503df9cd1baa1200fbb5f57cc49f6da3056d" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
+    ("7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "5acb6002127f5d212e2d31ba2ab5503df9cd1baa1200fbb5f57cc49f6da3056d" "cc60d17db31a53adf93ec6fad5a9cfff6e177664994a52346f81f62840fe8e23" default)))
  '(fci-rule-color "#383838")
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider)))
+    (keyfreq powershell indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider)))
  '(prettier-js-width-mode nil)
- '(rust-format-on-save t)
- '(split-height-threshold 200)
- '(split-width-threshold 100))
+ '(rust-format-on-save t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
