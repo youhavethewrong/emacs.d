@@ -7,10 +7,6 @@
 (require 'column-marker)
 (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100)))
 
-;; ;; regular auto-complete initialization
-;;  (require 'auto-complete-config)
-;;  (ac-config-default)
-
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 

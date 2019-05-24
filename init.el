@@ -126,9 +126,6 @@
     ;; fsharp
     fsharp-mode
 
-    ;; powershell
-    powershell
-
     ;; scala
     scala-mode
     ensime

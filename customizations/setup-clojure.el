@@ -14,7 +14,7 @@
 
 ;; ;; Clojure refactoring
 ;; (require 'clj-refactor)
-;; 
+;;
 ;; (defun enable-cljr ()
 ;;  (clj-refactor-mode 1)
 ;;  (yas-minor-mode 1) ; for adding require/use/import statements

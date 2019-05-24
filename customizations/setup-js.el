@@ -5,6 +5,9 @@
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'js-mode-hook 'indium-interaction-mode)
+(add-hook 'js-mode-hook (lambda () (auto-complete-mode 0)))
+(add-hook 'js-mode-hook 'company-mode)
+
 (setq js2-basic-offset 2)
 (setq js-indent-level 2)
 (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
@@ -13,6 +16,8 @@
 ;; jsx
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
 (add-hook 'rjsx-mode 'prettier-js-mode)
+(add-hook 'rjsx-mode (lambda () (auto-complete-mode 0)))
+(add-hook 'rjsx-mode 'company-mode)
 
 ;; html
 (add-hook 'html-mode-hook 'subword-mode)
