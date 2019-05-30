@@ -165,4 +165,4 @@ F5 again will unset 'selective-display' by setting it to 0."
       (set-selective-display 0)
 (set-selective-display (or level (1+ (current-column))))))
 
-(setq tramp-default-method "ssh"
+(setq tramp-default-method "ssh")
