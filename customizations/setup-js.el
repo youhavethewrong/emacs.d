@@ -1,3 +1,4 @@
+(require 'js)
 (require 'flycheck)
 
 ;; javascript
@@ -11,10 +12,8 @@
 
 (setq js2-basic-offset 2)
 (setq js-indent-level 2)
-(eval-after-load "js-mode"
-  '(progn
-     (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-     (setq company-tooltip-align-annotations t)))
+(define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
 
 ;; jsx
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
