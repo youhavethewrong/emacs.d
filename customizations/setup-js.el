@@ -7,7 +7,6 @@
 (add-hook 'js-mode-hook 'prettier-js-mode)
 (add-hook 'js-mode-hook (lambda () (auto-complete-mode 0)))
 (add-hook 'js-mode-hook 'company-mode)
-(add-hook 'js-mode-hook 'electric-pair-mode)
 (add-hook 'js-mode-hook 'flycheck-mode)
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js-mode-hook 'js2-refactor-mode)
