@@ -157,6 +157,9 @@
     ;; Nice theme when using high-color terminals
     cyberpunk-theme
 
+    ;; Another good dark theme
+    atom-one-dark-theme
+
     ;; make nested delimiters easier to pair off
     rainbow-delimiters
 

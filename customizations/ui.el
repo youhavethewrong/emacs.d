@@ -99,7 +99,7 @@
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'tsdh-dark t)))
+    (load-theme 'atom-one-dark t)))
 
 (defun dark-theme ()
   (interactive)
