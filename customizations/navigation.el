@@ -15,6 +15,8 @@
 ;; you've typed in
 ;; http://www.emacswiki.org/emacs/InteractivelyDoThings
 (use-package ido
+  :init
+  (ido-mode t)
   :config
   (setq ido-enable-flex-matching t)
   (setq ido-use-filename-at-point nil)
