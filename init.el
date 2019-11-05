@@ -16,6 +16,9 @@
 ;; change text editing behavior
 (load "editing.el")
 
+;; making navigating buffers and projects nice
+(load "navigation.el")
+
 ;; working with lisps
 (load "setup-lisp.el")
 
@@ -53,7 +56,7 @@
  '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    (quote
-    (rainbow-delimiters-mode save-place indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider)))
+    (buffer-mode uniquify rainbow-delimiters-mode save-place indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker yaml-mode tagedit smex projectile powerline markdown-mode magit linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider)))
  '(prettier-js-width-mode nil)
  '(rust-format-on-save t))
 

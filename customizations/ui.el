@@ -15,3 +15,12 @@
 
 ;; Make the font size a bit smaller
 (set-face-attribute 'default nil :height 85)
+
+;; Go straight to scratch buffer on startup
+(setq inhibit-startup-message t)
+
+;; No need for ~ files when editing
+(setq create-lockfiles nil)
+
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
