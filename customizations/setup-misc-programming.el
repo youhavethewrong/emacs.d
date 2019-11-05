@@ -10,15 +10,15 @@
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
-;; make java indentation friendly
-(add-hook 'java-mode-hook (lambda ()
-                            (setq c-basic-offset 4)))
-
 ;; subword hopping is nice
 (add-hook 'java-mode-hook 'subword-mode)
 
+;; use prettier-js with the prettier-js-java plugin to format
+(add-hook 'java-mode-hook 'prettier-js-mode)
+
 ;; set a prompt for sybase
 (setq sql-sybase-options '("--prompt=SQL> "))
+
 
 ;; Tell magit we know about the auto revert mode
 (setq magit-last-seen-setup-instructions "1.4.0")
