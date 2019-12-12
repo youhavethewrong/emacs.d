@@ -22,6 +22,15 @@
   :config
   (global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle))
 
+(use-package lsp-mode
+  :hook
+  (rust-mode . lsp)
+  :commands lsp)
+
+(use-package lsp-ui :commands lsp-ui-mode)
+
+(use-package company-lsp :commands company-lsp)
+
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
