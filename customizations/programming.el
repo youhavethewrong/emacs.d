@@ -61,6 +61,38 @@
         company-lsp-async t
         company-lsp-cache-candidates nil))
 
+(use-package prettier-js)
+(use-package js2-mode)
+(use-package js2-refactor)
+
+(use-package js
+             :init
+             (add-hook 'js-mode-hook 'subword-mode)
+             (add-hook 'js-mode-hook 'prettier-js-mode)
+             (add-hook 'js-mode-hook (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
+             (add-hook 'js-mode-hook 'company-mode)
+             (add-hook 'js-mode-hook 'flycheck-mode)
+             (add-hook 'js-mode-hook 'js2-minor-mode)
+             (add-hook 'js-mode-hook 'js2-refactor-mode)
+             :config
+             (setq js2-basic-offset 2)
+             (setq js-indent-level 2)
+             (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+             (setq company-tooltip-align-annotations t))
+
+(use-package rjsx-mode
+             :init
+             (add-hook 'rjsx-mode 'prettier-js-mode)
+             (add-hook 'rjsx-mode (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
+             (add-hook 'rjsx-mode 'company-mode))
+
+;; NOT DEALT WITH YET
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+
+(add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+
+(add-hook 'html-mode-hook 'subword-mode)
+
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
