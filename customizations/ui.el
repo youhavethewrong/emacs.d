@@ -27,9 +27,9 @@
 
 (if (display-graphic-p)
     (progn
-      (load-theme 'leuven t)
+      (load-theme 'atom-one-dark t)
       (powerline-default-theme))
-  (load-theme 'leuven t))
+  (load-theme 'atom-one-dark t))
 
 (defun disable-all-themes ()
   (mapcar
