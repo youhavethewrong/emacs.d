@@ -28,6 +28,13 @@
 ;; general programming
 (load "programming.el")
 
+;; searching and finding my way through code projects
+(load "searching.el")
+
+;; TODO
+;; (load "mouse.el")
+;; (load "shell-integration.el")
+
 ;; be able to restart emacs while its still running
 (use-package restart-emacs
   :defer t)

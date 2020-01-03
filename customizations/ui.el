@@ -1,3 +1,5 @@
+;; loaded in init.el
+
 ;; Turn off the menu bar at the top of each frame
 (when (fboundp 'menu-bar-mode)
   (menu-bar-mode -1))
@@ -14,7 +16,7 @@
 (blink-cursor-mode 0)
 
 ;; Make the font size a bit smaller
-(set-face-attribute 'default nil :height 85)
+(set-face-attribute 'default nil :height 115)
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)

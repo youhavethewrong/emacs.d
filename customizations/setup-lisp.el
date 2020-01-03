@@ -1,3 +1,5 @@
+;; loaded in init.el
+
 ;; Automatically load paredit when editing a lisp file
 ;; More at http://www.emacswiki.org/emacs/ParEdit
 (use-package paredit

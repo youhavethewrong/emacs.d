@@ -1,3 +1,4 @@
+;; loaded in init.el
 ;; install and use use-package
 
 (require 'package)

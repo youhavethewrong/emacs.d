@@ -1,3 +1,4 @@
+;; loaded in init.el
 (use-package linum-off
   :init
   (setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
