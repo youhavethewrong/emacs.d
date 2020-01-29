@@ -79,6 +79,7 @@
   (add-hook 'js-mode-hook 'js2-refactor-mode)
   :config
   (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+  (add-to-list 'auto-mode-alist '("\\package-lock.json$" . fundamental-mode)) ;; turn off js mode for package-lock.json
   (setq js2-basic-offset 2)
   (setq js-indent-level 2)
   (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
