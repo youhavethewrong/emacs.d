@@ -152,6 +152,8 @@
 ;; subword hopping is nice
 (add-hook 'java-mode-hook 'subword-mode)
 
+(add-hook 'prog-mode-hook 'show-paren-mode)
+
 ;; shell scripts
 (setq-default sh-basic-offset 2)
 (setq-default sh-indentation 2)
