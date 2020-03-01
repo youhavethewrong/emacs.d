@@ -16,7 +16,9 @@
 (blink-cursor-mode 0)
 
 ;; Make the font size a bit smaller
-(set-face-attribute 'default nil :height 115)
+(if (memq window-system '(mac ns))
+    (set-face-attribute 'default nil :height 110)
+  (set-face-attribute 'default nil :height 85))
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
@@ -29,7 +31,7 @@
 
 (if (display-graphic-p)
     (progn
-      (load-theme 'atom-one-dark t)
+      (load-theme 'leuven t)
       (powerline-default-theme))
   (load-theme 'atom-one-dark t))
 
