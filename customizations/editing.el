@@ -15,7 +15,7 @@
 (setq auto-save-default nil)
 
 ;; split vertically always
-(setq split-width-threshold 0)
+(setq split-width-threshold 40)
 (setq split-height-threshold nil)
 
 ;; nice keybindings
