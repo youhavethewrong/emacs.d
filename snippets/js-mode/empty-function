@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: empty function
+# key: emptyfunction
+# --
+function changeMe() {
+  return {ok: false};
+}

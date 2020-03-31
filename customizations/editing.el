@@ -14,6 +14,10 @@
 ;; don't auto save
 (setq auto-save-default nil)
 
+;; split side-by-side almost always
+(setq split-width-threshold 160)
+(setq split-height-threshold 80)
+
 ;; nice keybindings
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "C-c q") 'join-line)

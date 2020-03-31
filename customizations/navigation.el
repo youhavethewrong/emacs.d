@@ -51,6 +51,16 @@
   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
   (global-set-key (kbd "<C-S-right>")  'buf-move-right))
 
+;; thanks Reddit user shackra!
+(use-package ace-window
+    :bind ("M-o" . ace-window)
+    :init
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+    :config
+    (setf aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+
 (defun kill-other-buffers ()
     "Kill all other buffers."
       (interactive)
