@@ -58,3 +58,6 @@
   (progn
     (disable-all-themes)
     (load-theme 'cyberpunk t)))
+
+;; open everything with firefox
+(setq browse-url-generic-program "firefox")

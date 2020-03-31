@@ -51,6 +51,7 @@
  '(ansi-color-names-vector
    (vector "#eaeaea" "#d54e53" "#b9ca4a" "#e7c547" "#7aa6da" "#c397d8" "#70c0b1" "#000000"))
  '(beacon-color "goldenrod")
+ '(browse-url-browser-function (quote browse-url-firefox))
  '(cider-cljs-lein-repl
    "(do (require 'cljs.repl.node) (cemerick.piggieback/cljs-repl (cljs.repl.node/repl-env)))")
  '(cljr-favor-prefix-notation nil)
