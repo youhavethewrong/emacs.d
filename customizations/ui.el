@@ -15,9 +15,9 @@
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
 
-;; Make the font size a bit smaller on Linux, bigger and Dank on Mac
+;; Make the font size a bit smaller on Linux, bigger on Mac
 (if (memq window-system '(mac ns))
-    (set-face-attribute 'default nil :family "Dank Mono":height 120 :weight 'normal :width 'normal)
+    (set-face-attribute 'default nil :family "Andale Mono" :height 120 :weight 'regular :width 'regular)
   (set-face-attribute 'default nil :family "Fira Mono" :height 85 :weight 'regular :width 'regular))
 
 ;; Go straight to scratch buffer on startup

@@ -14,6 +14,12 @@
   :config
   (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100))))
 
+(use-package yafolding
+  :ensure t
+  :config (yafolding-mode)
+  :bind (("C-x C-_" . yafolding-toggle-element)
+	 ("C-x C-h" . yafolding-hide-all)))
+
 (use-package magit
   :defer t
   :config
