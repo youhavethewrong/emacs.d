@@ -20,7 +20,6 @@
     (set-face-attribute 'default nil :family "Andale Mono" :height 120 :weight 'regular :width 'regular)
   (set-face-attribute 'default nil :family "Fira Mono" :height 85 :weight 'regular :width 'regular))
 
-
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 

@@ -17,7 +17,7 @@
 (use-package yafolding
   :ensure t
   :config (yafolding-mode)
-  :bind (("C-x C-_" . yafolding-toggle-element)
+  :bind (("C-x C-j" . yafolding-toggle-element)
 	 ("C-x C-h" . yafolding-hide-all)))
 
 (use-package magit
