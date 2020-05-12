@@ -18,8 +18,8 @@
   :ensure t
   :config (yafolding-mode)
   :bind (("C-x C-j" . yafolding-toggle-element)
-	 ("C-x C-h" . yafolding-hide-all)))
-
+	 ("C-x C-h" . yafolding-hide-all)
+         ("C-x M-h" . yafolding-show-all)))
 (use-package magit
   :defer t
   :config
