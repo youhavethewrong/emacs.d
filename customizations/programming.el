@@ -14,12 +14,6 @@
   :config
   (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100))))
 
-(use-package yafolding
-  :ensure t
-  :config (yafolding-mode)
-  :bind (("C-x C-j" . yafolding-toggle-element)
-	 ("C-x C-h" . yafolding-hide-all)
-         ("C-x M-h" . yafolding-show-all)))
 (use-package magit
   :defer t
   :config
@@ -146,8 +140,6 @@
 ;; -----------------------------------------------------------------------------
 ;; NOT DEALT WITH YET
 ;; -----------------------------------------------------------------------------
-(add-hook 'html-mode-hook 'subword-mode)
-
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
@@ -155,10 +147,10 @@
 (add-hook 'java-mode-hook (lambda ()
                             (setq c-basic-offset 4)))
 
-;; subword hopping is nice
-(add-hook 'java-mode-hook 'subword-mode)
-
+;; prog mode hooks
+(add-hook 'prog-mode-hook 'subword-mode)
 (add-hook 'prog-mode-hook 'show-paren-mode)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
 
 ;; shell scripts
 (setq-default sh-basic-offset 2)
