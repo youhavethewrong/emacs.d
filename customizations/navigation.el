@@ -29,7 +29,7 @@
 
 (use-package ido-completing-read+
   :init
-  (ido-ubiquitous-mode t))
+  (ido-ubiquitous-mode 1))
 
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
