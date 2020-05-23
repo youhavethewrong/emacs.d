@@ -30,6 +30,14 @@
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Use powerline
+(use-package powerline)
+
+;; Use themes
+(use-package atom-one-dark)
+(use-package leuven)
+(use-package cyberpunk)
+
 (if (display-graphic-p)
     (progn
       (load-theme 'leuven t)
