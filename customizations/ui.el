@@ -30,11 +30,21 @@
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(if (display-graphic-p)
-    (progn
+;; Use powerline
+(use-package powerline
+  :if (display-graphic-p)
+  :config
+  (powerline-default-theme))
+
+;; Use themes
+(use-package atom-one-dark-theme)
+
+(use-package leuven-theme
+  :after atom-one-dark-theme
+  :config
+  (if (display-graphic-p)
       (load-theme 'leuven t)
-      (powerline-default-theme))
-  (load-theme 'atom-one-dark t))
+    (load-theme 'atom-one-dark t)))
 
 (defun disable-all-themes ()
   (mapcar
