@@ -32,7 +32,7 @@
 
 ;; Use powerline
 (use-package powerline
-  :conditional (display-graphic-p)
+  :if (display-graphic-p)
   :config
   (powerline-default-theme))
 
