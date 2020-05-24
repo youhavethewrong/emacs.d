@@ -31,18 +31,20 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Use powerline
-(use-package powerline)
+(use-package powerline
+  :config
+  (if (display-graphic-p)
+      (powerline-default-theme)))
 
 ;; Use themes
-(use-package atom-one-dark)
-(use-package leuven)
-(use-package cyberpunk)
+(use-package atom-one-dark-theme)
 
-(if (display-graphic-p)
-    (progn
+(use-package leuven-theme
+  :after atom-one-dark-theme
+  :config
+  (if (display-graphic-p)
       (load-theme 'leuven t)
-      (powerline-default-theme))
-  (load-theme 'atom-one-dark t))
+    (load-theme 'atom-one-dark t)))
 
 (defun disable-all-themes ()
   (mapcar
