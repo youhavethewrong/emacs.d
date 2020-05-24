@@ -32,9 +32,9 @@
 
 ;; Use powerline
 (use-package powerline
+  :conditional (display-graphic-p)
   :config
-  (if (display-graphic-p)
-      (powerline-default-theme)))
+  (powerline-default-theme))
 
 ;; Use themes
 (use-package atom-one-dark-theme)
