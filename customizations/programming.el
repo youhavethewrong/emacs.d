@@ -50,6 +50,13 @@
         lsp-ui-peek-peek-height 25)
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
+;; Yasnippet
+(use-package yasnippet
+  :requires
+  :config
+  (yas-global-mode 1))
+
+;; Company
 (use-package company
   :config
   (setq company-idle-delay 0.3)
