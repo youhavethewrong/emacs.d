@@ -114,7 +114,6 @@
 
 ;; Clojure
 (use-package clojure-mode
-  :requires clojure-mode-extra-font-locking
   :init
   (add-hook 'clojure-mode-hook 'paredit-mode)
   (add-hook 'clojure-mode-hook 'subword-mode)
@@ -123,6 +122,9 @@
   (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
   (add-to-list 'auto-mode-alist '("\\.cljc$" . clojurec-mode))
   (add-to-list 'auto-mode-alist '("\\.cljs$" . clojurescript-mode)))
+
+(use-package clojure-mode-extra-font-locking
+  :requires clojure-mode)
 
 (use-package cider
   :init
