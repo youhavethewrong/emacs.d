@@ -23,8 +23,11 @@
   :config
   (global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle))
 
+(use-package rust-mode)
+
 ;; Language Server Protocol
 (use-package lsp-mode
+  :requires rust-mode
   :config
   (setq lsp-prefer-flymake nil)
   :hook
