@@ -52,7 +52,6 @@
 
 ;; Yasnippet
 (use-package yasnippet
-  :requires
   :config
   (yas-global-mode 1))
 
