@@ -1,6 +1,5 @@
-;; Sets up exec-path-from shell
-;; https://github.com/purcell/exec-path-from-shell
-(when (memq window-system '(mac ns))
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-envs
-   '("PATH")))
+;; Use shell PATH if running in a GUI frame on OSX or Linux
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
+  :init
+  (exec-path-from-shell-initialize))

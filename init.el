@@ -10,6 +10,9 @@
 ;; load package support and use-package
 (load "up.el")
 
+;; setup shell integration when necessary
+(load "shell-integration.el")
+
 ;; changing how emacs looks across all modes
 (load "ui.el")
 
@@ -33,7 +36,6 @@
 
 ;; TODO
 ;; (load "mouse.el")
-;; (load "shell-integration.el")
 
 ;; be able to restart emacs while its still running
 (use-package restart-emacs
