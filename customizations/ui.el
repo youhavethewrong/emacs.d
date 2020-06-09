@@ -37,14 +37,14 @@
   (powerline-default-theme))
 
 ;; Use themes
-(use-package atom-one-dark-theme)
+;; leuven is a default theme -- no need to use a package
 
-(use-package leuven-theme
-  :after atom-one-dark-theme
+(use-package cyberpunk-2019-theme
   :config
   (if (display-graphic-p)
+      ;; light theme in graphical, dark in cli
       (load-theme 'leuven t)
-    (load-theme 'atom-one-dark t)))
+    (load-theme 'cyberpunk-2019 t)))
 
 (defun disable-all-themes ()
   (mapcar
@@ -52,23 +52,17 @@
    (custom-available-themes)))
 
 ;; make it easy to switch back and forth depending on light conditions
-(defun bright-theme ()
+(defun light-mode ()
   (interactive)
   (progn
     (disable-all-themes)
     (load-theme 'leuven t)))
 
-(defun dark-theme-alt ()
+(defun dark-mode ()
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'atom-one-dark t)))
-
-(defun dark-theme ()
-  (interactive)
-  (progn
-    (disable-all-themes)
-    (load-theme 'cyberpunk t)))
+    (load-theme 'cyberpunk-2019 t)))
 
 ;; open everything with firefox
 (setq browse-url-generic-program "firefox")
