@@ -42,9 +42,8 @@
 (use-package cyberpunk-2019-theme
   :config
   (if (display-graphic-p)
-      ;; light theme in graphical, dark in cli
-      (load-theme 'leuven t)
-    (load-theme 'cyberpunk-2019 t)))
+      (load-theme 'cyberpunk-2019 t)
+    (load-theme 'leuven t)))
 
 (defun disable-all-themes ()
   (mapcar
