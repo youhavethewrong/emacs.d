@@ -58,7 +58,7 @@
 ;; Company
 (use-package company
   :config
-  (setq company-idle-delay 0.3)
+  (setq company-idle-delay 1.0)
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
