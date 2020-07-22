@@ -23,15 +23,49 @@
   :config
   (global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle))
 
+;; JavaScript
+(use-package prettier-js)
+(use-package js2-mode)
+(use-package js2-refactor)
+
+(use-package js
+  :init
+  (add-hook 'js-mode-hook 'subword-mode)
+  (add-hook 'js-mode-hook 'prettier-js-mode)
+  (add-hook 'js-mode-hook (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
+  (add-hook 'js-mode-hook 'company-mode)
+  (add-hook 'js-mode-hook 'flycheck-mode)
+  (add-hook 'js-mode-hook 'js2-minor-mode)
+  (add-hook 'js-mode-hook 'js2-refactor-mode)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+  (add-to-list 'auto-mode-alist '("\\package-lock.json$" . fundamental-mode)) ;; turn off js mode for package-lock.json
+  (setq js2-basic-offset 2)
+  (setq js-indent-level 2)
+  (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+  (setq company-tooltip-align-annotations t))
+
+;; JSX
+(use-package rjsx-mode
+  :init
+  (add-hook 'rjsx-mode 'subword-mode)
+  (add-hook 'rjsx-mode 'prettier-js-mode)
+  (add-hook 'rjsx-mode (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
+  (add-hook 'rjsx-mode 'company-mode)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
+
 (use-package rust-mode)
 
 ;; Language Server Protocol
+;; JS -> npm i -g typescript-language-server; npm i -g typescript
+;; Rust -> rustup component add rls
 (use-package lsp-mode
-  :requires rust-mode
   :config
   (setq lsp-prefer-flymake nil)
   :hook
-  (rust-mode . lsp)
+  ((rust-mode . lsp)
+   (js . lsp))
   :commands lsp)
 
 (use-package lsp-ui
@@ -71,38 +105,6 @@
   (setq company-transformers nil
         company-lsp-async t
         company-lsp-cache-candidates nil))
-
-;; JavaScript
-(use-package prettier-js)
-(use-package js2-mode)
-(use-package js2-refactor)
-
-(use-package js
-  :init
-  (add-hook 'js-mode-hook 'subword-mode)
-  (add-hook 'js-mode-hook 'prettier-js-mode)
-  (add-hook 'js-mode-hook (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
-  (add-hook 'js-mode-hook 'company-mode)
-  (add-hook 'js-mode-hook 'flycheck-mode)
-  (add-hook 'js-mode-hook 'js2-minor-mode)
-  (add-hook 'js-mode-hook 'js2-refactor-mode)
-  :config
-  (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
-  (add-to-list 'auto-mode-alist '("\\package-lock.json$" . fundamental-mode)) ;; turn off js mode for package-lock.json
-  (setq js2-basic-offset 2)
-  (setq js-indent-level 2)
-  (define-key js-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-  (setq company-tooltip-align-annotations t))
-
-;; JSX
-(use-package rjsx-mode
-  :init
-  (add-hook 'rjsx-mode 'subword-mode)
-  (add-hook 'rjsx-mode 'prettier-js-mode)
-  (add-hook 'rjsx-mode (lambda () (auto-complete-mode 0))) ;; turn off auto-complete-mode
-  (add-hook 'rjsx-mode 'company-mode)
-  :config
-  (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
 
 ;; F#
 (use-package fsharp-mode
