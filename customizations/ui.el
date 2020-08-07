@@ -36,14 +36,8 @@
   :config
   (powerline-default-theme))
 
-;; Use themes
-;; leuven is a default theme -- no need to use a package
-
-(use-package cyberpunk-2019-theme
-  :config
-  (if (display-graphic-p)
-      (load-theme 'cyberpunk-2019 t)
-    (load-theme 'leuven t)))
+(use-package apropospriate-theme
+  :ensure t)
 
 (defun disable-all-themes ()
   (mapcar
@@ -55,13 +49,15 @@
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'leuven t)))
+    (load-theme 'apropospriate-light t)))
 
 (defun dark-mode ()
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'cyberpunk-2019 t)))
+    (load-theme 'apropospriate-dark t)))
 
-;; open everything with firefox
-(setq browse-url-generic-program "firefox")
+;; open everything with firefox on linux, open on mac
+(if (memq window-system '(mac ns))
+    (setq browse-url-generic-program "open")
+    (setq browse-url-generic-program "firefox"))
