@@ -31,7 +31,7 @@
 
 (use-package saveplace
   :init
-  (setq-default save-place t)
+  (setq-default save-place-mode t)
   (setq save-place-file (concat user-emacs-directory "places")))
 
 ;; Delete trailing whitespace
