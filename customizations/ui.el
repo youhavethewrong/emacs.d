@@ -39,6 +39,10 @@
 (use-package apropospriate-theme
   :ensure t)
 
+(use-package gruvbox-theme
+  :config
+  (load-theme 'gruvbox-dark-hard t))
+
 (defun disable-all-themes ()
   (mapcar
    (lambda (theme) (funcall 'disable-theme theme))
@@ -49,13 +53,13 @@
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'apropospriate-light t)))
+    (load-theme 'gruvbox-light-hard t)))
 
 (defun dark-mode ()
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'apropospriate-dark t)))
+    (load-theme 'gruvbox-dark-hard t)))
 
 ;; open everything with firefox on linux, open on mac
 (if (memq window-system '(mac ns))
