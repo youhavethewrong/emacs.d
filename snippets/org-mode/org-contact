@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Org-mode contact
+# key: contact
+# --
+** $1
+:PROPERTIES:
+:EMAIL:    $2@$3.com
+:TEL:      $4
+:LOC:      $5
+:NOTES:    $6
+:END:
