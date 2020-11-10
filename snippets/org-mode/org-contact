@@ -6,6 +6,9 @@
 :PROPERTIES:
 :EMAIL:    $2@$3.com
 :TEL:      $4
-:LOC:      $5
-:NOTES:    $6
+:BIRTHDAY: $5
+:MARRIED:  $6
+:CAREER:   $7
+:LOC:      $8
+:NOTES:    $9
 :END:
