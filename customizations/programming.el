@@ -23,6 +23,10 @@
   :config
   (global-set-key (kbd "C-c C-u") 'string-inflection-all-cycle))
 
+(use-package yafolding
+  :config
+  (add-hook 'prog-mode-hook (lambda () (yafolding-mode))))
+
 ;; JavaScript
 (use-package prettier-js)
 (use-package js2-mode)
