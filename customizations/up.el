@@ -13,11 +13,11 @@
 ;; set these packages to latest stable version
 (setq package-pinned-packages
       '(
-        ;; (cider               . "melpa-stable")
-        ;; (clj-refactor        . "melpa-stable")
+        (cider               . "melpa-stable")
+        (clj-refactor        . "melpa-stable")
         (magit               . "melpa-stable")
         ;; (flycheck-clojure    . "melpa-stable")
-        ;; (use-package         . "melpa-stable")
+        (use-package         . "melpa-stable")
         ))
 
 (package-initialize)
