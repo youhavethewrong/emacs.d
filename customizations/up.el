@@ -16,8 +16,8 @@
         (cider               . "melpa-stable")
         (clj-refactor        . "melpa-stable")
         (magit               . "melpa-stable")
-        ;; (flycheck-clojure    . "melpa-stable")
         (use-package         . "melpa-stable")
+        (org-bullets         . "melpa-stable")
         ))
 
 (package-initialize)

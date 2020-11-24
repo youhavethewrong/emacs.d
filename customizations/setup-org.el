@@ -1,4 +1,6 @@
 ;; loaded in init.el
+(require 'org)
+
 (use-package org-bullets
   :defer t
   :init
