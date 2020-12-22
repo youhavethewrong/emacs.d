@@ -154,6 +154,9 @@
   (setq cider-auto-select-error-buffer t)
   (setq cider-lein-parameters "repl :headless :host localhost"))
 
+;; Dockerfile mode
+(use-package docker)
+
 ;; -----------------------------------------------------------------------------
 ;; NOT DEALT WITH YET
 ;; -----------------------------------------------------------------------------
