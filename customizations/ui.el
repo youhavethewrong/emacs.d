@@ -36,6 +36,12 @@
   :config
   (powerline-default-theme))
 
+(use-package nyan-mode
+  :init
+  (add-hook 'powerline-major-mode nyan-mode)
+  :config
+  (setq nyan-minimum-window-width 130))
+
 (use-package apropospriate-theme
   :ensure t)
 
