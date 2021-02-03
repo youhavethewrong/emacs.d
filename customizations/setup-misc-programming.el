@@ -4,9 +4,6 @@
 (add-hook 'prog-mode-hook 'idle-highlight-mode)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-(require 'column-marker)
-(add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100)))
-
 ;; .m is for octave, not ObjC
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 

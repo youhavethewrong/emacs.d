@@ -7,17 +7,19 @@
 ;; configure package sources
 (setq package-archives
       '(("gnu"          . "https://elpa.gnu.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")))
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/")))
 
 ;; set these packages to latest stable version
 (setq package-pinned-packages
       '(
         (cider               . "melpa-stable")
         (clj-refactor        . "melpa-stable")
-        (magit               . "melpa-stable")
-        (use-package         . "melpa-stable")
+        (lsp-mode            . "melpa-stable")
+        (lsp-ui              . "melpa-stable")
         (org-bullets         . "melpa-stable")
+        (projectile          . "melpa-stable")
+        (use-package         . "melpa-stable")
         ))
 
 (package-initialize)

@@ -9,15 +9,11 @@
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-(use-package column-marker
-  :defer t
-  :config
-  (add-hook 'prog-mode-hook (lambda () (interactive) (column-marker-3 100))))
-
 (use-package magit
   :defer t
   :config
-  (setq magit-last-seen-setup-instructions "1.4.0"))
+  (setq magit-last-seen-setup-instructions "1.4.0")
+  :pin melpa-stable)
 
 (use-package string-inflection
   :config
@@ -59,7 +55,8 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
 
-(use-package rust-mode)
+(use-package rust-mode
+  :init (setq lsp-rust-server 'rust-analyzer))
 
 ;; Language Server Protocol
 ;; JS -> npm i -g typescript-language-server; npm i -g typescript
@@ -99,16 +96,6 @@
   (setq company-idle-delay 1.0)
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
-
-(use-package company-lsp
-  :requires company
-  :config
-  (push 'company-lsp company-backends)
-
-  ;; Disable client-side cache because the LSP server does a better job.
-  (setq company-transformers nil
-        company-lsp-async t
-        company-lsp-cache-candidates nil))
 
 ;; F#
 (use-package fsharp-mode

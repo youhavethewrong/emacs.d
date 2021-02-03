@@ -31,13 +31,9 @@
   :init
   (ido-ubiquitous-mode 1))
 
-;; Enhances M-x to allow easier execution of commands. Provides
-;; a filterable list of possible commands in the minibuffer
-;; http://www.emacswiki.org/emacs/Smex
-(use-package smex
-  :config
-  (setq smex-save-file (concat user-emacs-directory ".smex-items"))
-  (global-set-key (kbd "M-x") 'smex))
+(use-package amx
+  :init
+  (amx-mode t))
 
 (use-package projectile
   :config
