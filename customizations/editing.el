@@ -47,3 +47,14 @@
     (progn
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
       (message "Hook added."))))
+
+(use-package cdlatex
+  :defer t)
+(use-package auctex
+  :defer t
+  :requires cdlatex
+  :config
+  (setq TeX-auto-save t
+        TeX-parse-self t)
+  :hook ((LaTeX-mode . turn-on-cdlatex)
+         (LaTeX-mode . font-lock-mode)))
