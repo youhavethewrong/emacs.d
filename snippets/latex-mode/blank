@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: blank document
+# key: blank
+# --
+\\documentclass{article}
+\\usepackage[utf8]{inputenc}
+
+\\title{$1}
+\\author{Erick Crager}
+\\date{$2}
+
+\\begin{document}
+
+\\maketitle
+
+\\section{$3}
+
+\\end{document}
