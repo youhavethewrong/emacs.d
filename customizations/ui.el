@@ -18,7 +18,7 @@
 ;; Make the font size a bit smaller on Linux, bigger on Mac
 ;; (-filter (lambda (font) (string-suffix-p "Mono" font)) (font-family-list))
 (if (memq window-system '(mac ns))
-    (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono" :height 130 :weight 'regular :width 'regular)
+    (set-face-attribute 'default nil :family "FiraCode Nerd Font Mono" :height 110 :weight 'regular :width 'regular)
   (set-face-attribute 'default nil :family "Fira Mono" :height 100 :weight 'regular :width 'regular))
 
 ;; Go straight to scratch buffer on startup
