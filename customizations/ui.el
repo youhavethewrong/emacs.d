@@ -36,9 +36,6 @@
   :config
   (powerline-default-theme))
 
-(use-package apropospriate-theme
-  :ensure t)
-
 (use-package gruvbox-theme
   :config
   (load-theme 'gruvbox-dark-hard t))

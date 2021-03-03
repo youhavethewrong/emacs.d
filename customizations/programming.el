@@ -97,13 +97,6 @@
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
-;; F#
-(use-package fsharp-mode
-  :config
-  (setq inferior-fsharp-program "/usr/bin/fsharpi --readline-")
-  (setq fsharp-compiler "/usr/bin/fsharpc")
-  (add-to-list 'auto-mode-alist '("\\.fs[iylx]?$" . fsharp-mode)))
-
 ;; Groovy
 (use-package groovy-mode
   :init
