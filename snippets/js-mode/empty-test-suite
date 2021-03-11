@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: empty test suite
+# key: emptytestsuite
+# --
+describe("", () => {
+  it("", async () => {
+    expect(true).toBe(false);
+  });
+});
