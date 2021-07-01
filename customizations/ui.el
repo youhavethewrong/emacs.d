@@ -30,15 +30,16 @@
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Use Leuven by default
+(load-theme 'leuven t)
+
 ;; Use powerline
 (use-package powerline
   :if (display-graphic-p)
   :config
   (powerline-default-theme))
 
-(use-package gruvbox-theme
-  :config
-  (load-theme 'gruvbox-dark-hard t))
+(use-package gruvbox-theme)
 
 (defun disable-all-themes ()
   (mapcar
