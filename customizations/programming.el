@@ -54,6 +54,16 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
 
+(use-package typescript-mode
+  :ensure t)
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
+
 (use-package rust-mode
   :init (setq lsp-rust-server 'rust-analyzer))
 

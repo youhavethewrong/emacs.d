@@ -64,7 +64,7 @@
  '(magit-git-executable "/usr/bin/git")
  '(org-adapt-indentation nil)
  '(package-selected-packages
-   '(dash-functional js2-mode amx smex projectile magit lsp-ui lsp-mode gruvbox-theme atom-one-dark-theme dash buffer-mode uniquify rainbow-delimiters-mode save-place indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker tagedit markdown-mode linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))
+   '(tide typescript-mode typescript dash-functional js2-mode amx smex projectile magit lsp-ui lsp-mode gruvbox-theme atom-one-dark-theme dash buffer-mode uniquify rainbow-delimiters-mode save-place indium visible-mark terraform-mode toml-mode cargo phettier-js js2-refactor cider buffer-move column-marker tagedit markdown-mode linum-off ido-ubiquitous idle-highlight-mode haskell-mode groovy-mode fsharp-mode evil-numbers erlang elixir-mode clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor beacon ac-cider))
  '(prettier-js-width-mode nil)
  '(rust-format-on-save t))
 
