@@ -143,7 +143,7 @@
 
 (defvar search-tool
   (if (executable-find "rg")
-      "rg -i -H --no-heading -g '!node_modules' -g !'*.json' -e \""
+      "rg -i -H --no-heading -g '!node_modules' -g !'*.json' -g !'*.css' -g !'*.scss' -e \""
     "grep --color --exclude-dir=.git --exclude-dir=public --exclude-dir=build --exclude-dir=reference --exclude-dir=resources --exclude-dir=coverage --exclude-dir=node_modules -nriH -e \""))
 
 (defun npm-grep (term)

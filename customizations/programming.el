@@ -55,17 +55,20 @@
   (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
 
 (use-package typescript-mode
-  :ensure t)
+  :ensure t
+  :init
+  (add-hook 'typescript-mode-hook 'prettier-js-mode))
 
 (use-package tide
   :ensure t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
+         (typescript-mode . tide-hl-identifier-mode)))
 
 (use-package rust-mode
   :init (setq lsp-rust-server 'rust-analyzer))
+
+(use-package restclient)
 
 ;; Language Server Protocol
 ;; JS -> npm i -g typescript-language-server; npm i -g typescript
