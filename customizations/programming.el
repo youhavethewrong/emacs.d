@@ -54,8 +54,21 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode)))
 
+(use-package typescript-mode
+  :ensure t
+  :init
+  (add-hook 'typescript-mode-hook 'prettier-js-mode))
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)))
+
 (use-package rust-mode
   :init (setq lsp-rust-server 'rust-analyzer))
+
+(use-package restclient)
 
 ;; Language Server Protocol
 ;; JS -> npm i -g typescript-language-server; npm i -g typescript
@@ -132,9 +145,6 @@
   (setq cider-show-error-buffer t)
   (setq cider-auto-select-error-buffer t)
   (setq cider-lein-parameters "repl :headless :host localhost"))
-
-;; Dockerfile mode
-(use-package docker)
 
 ;; -----------------------------------------------------------------------------
 ;; NOT DEALT WITH YET
