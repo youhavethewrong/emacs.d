@@ -1,0 +1,66 @@
+
+;; ----- amx-history -----
+(
+ eval-region
+ grep
+ paredit-forward-slurp-sexp
+ eval-buffer
+ org-time-stamp
+ package-list-packages
+ text-scale-adjust
+)
+
+;; ----- amx-data -----
+(
+ (grep . 10)
+ (package-list-packages . 7)
+ (org-time-stamp . 11)
+ (dired . 6)
+ (org-cdlatex-mode . 4)
+ (LaTeX-mode . 4)
+ (org-mode . 1)
+ (cdlatex-mode . 1)
+ (preview-buffer . 11)
+ (yas-new-snippet . 1)
+ (recompile . 2)
+ (org-latex-export-to-pdf . 3)
+ (org-latex-preview . 3)
+ (browse-url . 1)
+ (org-insert-link . 7)
+ (yas-insert-snippet . 9)
+ (ps-print-region . 3)
+ (customize . 2)
+ (ispell-word . 3)
+ (delete-file . 1)
+ (org-edit-table\.el . 1)
+ (table-insert-row . 1)
+ (org-table-insert-row . 1)
+ (org-table-insert-hline . 1)
+ (eval-buffer . 5)
+ (comment-region . 2)
+ (comment-box . 2)
+ (shell-mode . 1)
+ (shell-script-mode . 2)
+ (text-scale-increase . 1)
+ (ps-print-buffer . 1)
+ (lsp . 3)
+ (string-insert-rectangle . 2)
+ (cider-jack-in . 2)
+ (paredit-forward-slurp-sexp . 3)
+ (sgml-pretty-print . 1)
+ (html-mode . 1)
+ (replace-string . 10)
+ (org-bullets . 1)
+ (org-bullets-mode . 5)
+ (paredit-mode . 2)
+ (clojure-mode . 1)
+ (shell . 3)
+ (org-html-export-as-html . 1)
+ (org-html-export-to-html . 1)
+ (load-theme . 5)
+ (disable-theme . 2)
+ (enable-theme . 1)
+ (base64-decode-region . 1)
+ (text-scale-adjust . 4)
+ (eval-region . 2)
+)
