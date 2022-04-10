@@ -1,4 +1,4 @@
-;;; autothemer-autoloads.el --- automatically extracted autoloads
+;;; autothemer-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -25,7 +25,7 @@ approximate the faces' current definitions using the color
 palette used in the most recent invocation of
 `autothemer-deftheme'." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "autothemer" '("autothemer--")))
+(register-definition-prefixes "autothemer" '("autothemer--"))
 
 ;;;***
 

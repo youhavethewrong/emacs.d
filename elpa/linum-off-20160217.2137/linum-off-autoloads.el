@@ -1,4 +1,4 @@
-;;; linum-off-autoloads.el --- automatically extracted autoloads
+;;; linum-off-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -9,7 +9,7 @@
 ;;;### (autoloads nil "linum-off" "linum-off.el" (0 0 0 0))
 ;;; Generated autoloads from linum-off.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "linum-off" '("linum-")))
+(register-definition-prefixes "linum-off" '("linum-"))
 
 ;;;***
 

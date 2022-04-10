@@ -1,4 +1,4 @@
-;;; js2-refactor-autoloads.el --- automatically extracted autoloads
+;;; js2-refactor-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -12,10 +12,19 @@
 (autoload 'js2-refactor-mode "js2-refactor" "\
 Minor mode providing JavaScript refactorings.
 
-If called interactively, enable Js2-Refactor mode if ARG is
-positive, and disable it if ARG is zero or negative.  If called
-from Lisp, also enable the mode if ARG is omitted or nil, and
-toggle it if ARG is `toggle'; disable the mode otherwise.
+This is a minor mode.  If called interactively, toggle the
+`Js2-Refactor mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `js2-refactor-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
 
 \(fn &optional ARG)" t nil)
 
@@ -29,7 +38,7 @@ Add js2r keybindings using the modifier MODIFIER.
 
 \(fn MODIFIER)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2-refactor" '("js2")))
+(register-definition-prefixes "js2-refactor" '("js2"))
 
 ;;;***
 
@@ -37,7 +46,7 @@ Add js2r keybindings using the modifier MODIFIER.
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from js2r-conditionals.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-conditionals" '("js2r-ternary-to-if")))
+(register-definition-prefixes "js2r-conditionals" '("js2r-ternary-to-if"))
 
 ;;;***
 
@@ -45,7 +54,7 @@ Add js2r keybindings using the modifier MODIFIER.
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from js2r-conveniences.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-conveniences" '("js2r-" "move-line-")))
+(register-definition-prefixes "js2r-conveniences" '("js2r-" "move-line-"))
 
 ;;;***
 
@@ -53,7 +62,7 @@ Add js2r keybindings using the modifier MODIFIER.
 ;;;;;;  0 0))
 ;;; Generated autoloads from js2r-formatting.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-formatting" '("js2r-")))
+(register-definition-prefixes "js2r-formatting" '("js2r-"))
 
 ;;;***
 
@@ -61,28 +70,28 @@ Add js2r keybindings using the modifier MODIFIER.
 ;;;;;;  0))
 ;;; Generated autoloads from js2r-functions.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-functions" '("js2r-")))
+(register-definition-prefixes "js2r-functions" '("js2r-"))
 
 ;;;***
 
 ;;;### (autoloads nil "js2r-helpers" "js2r-helpers.el" (0 0 0 0))
 ;;; Generated autoloads from js2r-helpers.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-helpers" '("js2r--")))
+(register-definition-prefixes "js2r-helpers" '("js2r--"))
 
 ;;;***
 
 ;;;### (autoloads nil "js2r-iife" "js2r-iife.el" (0 0 0 0))
 ;;; Generated autoloads from js2r-iife.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-iife" '("js2r-")))
+(register-definition-prefixes "js2r-iife" '("js2r-"))
 
 ;;;***
 
 ;;;### (autoloads nil "js2r-paredit" "js2r-paredit.el" (0 0 0 0))
 ;;; Generated autoloads from js2r-paredit.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-paredit" '("js2r-")))
+(register-definition-prefixes "js2r-paredit" '("js2r-"))
 
 ;;;***
 
@@ -98,14 +107,14 @@ Renames the variable on point and all occurrences in its lexical scope." t nil)
 
 (autoload 'js2r-extract-const "js2r-vars" nil t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-vars" '("current-line-contents" "js2r-")))
+(register-definition-prefixes "js2r-vars" '("current-line-contents" "js2r-"))
 
 ;;;***
 
 ;;;### (autoloads nil "js2r-wrapping" "js2r-wrapping.el" (0 0 0 0))
 ;;; Generated autoloads from js2r-wrapping.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "js2r-wrapping" '("js2r-")))
+(register-definition-prefixes "js2r-wrapping" '("js2r-"))
 
 ;;;***
 

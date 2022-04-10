@@ -1,6 +1,7 @@
 ;;; org-bullets.el --- Show bullets in org-mode as UTF-8 characters
 ;;; Version: 0.2.4
 ;; Package-Version: 0.2.4
+;; Package-Commit: b70ac2ec805bcb626a6e39ea696354577c681b36
 ;;; Author: sabof
 ;;; URL: https://github.com/sabof/org-bullets
 

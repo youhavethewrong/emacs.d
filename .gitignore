@@ -8,3 +8,4 @@ projectile-bookmarks.eld
 customizations/secret.el
 ido.last
 elpa/archives/
+*.elc

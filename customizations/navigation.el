@@ -35,9 +35,15 @@
   :init
   (amx-mode t))
 
+;; Config from projectile's docs:
+;; https://docs.projectile.mx/projectile/installation.html
 (use-package projectile
-  :config
-  (projectile-global-mode))
+  :ensure t
+  :pin melpa-stable
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map)))
 
 (use-package beacon
   :config

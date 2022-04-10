@@ -1,4 +1,4 @@
-;;; clojure-mode-extra-font-locking-autoloads.el --- automatically extracted autoloads
+;;; clojure-mode-extra-font-locking-autoloads.el --- automatically extracted autoloads  -*- lexical-binding: t -*-
 ;;
 ;;; Code:
 
@@ -10,7 +10,7 @@
 ;;;;;;  (0 0 0 0))
 ;;; Generated autoloads from clojure-mode-extra-font-locking.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "clojure-mode-extra-font-locking" '("clojure-built-in-")))
+(register-definition-prefixes "clojure-mode-extra-font-locking" '("clojure-built-in-"))
 
 ;;;***
 
