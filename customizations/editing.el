@@ -1,10 +1,17 @@
 ;; loaded in init.el
+;; better than ido, helm, ivy, etc.
+(use-package selectrum
+  :config
+  (selectrum-mode +1))
+
+;; line numbers are usually nice
 (use-package linum-off
   :init
   (setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode pdf-view-mode markdown-mode))
   :config
   (global-linum-mode))
 
+;; TODO, add a toggle for tabs because I need them sometimes
 ;; Don't use literal tabs
 (setq-default indent-tabs-mode nil)
 
@@ -47,14 +54,3 @@
     (progn
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
       (message "Hook added."))))
-
-(use-package cdlatex
-  :defer t)
-(use-package auctex
-  :defer t
-  :requires cdlatex
-  :config
-  (setq TeX-auto-save t
-        TeX-parse-self t)
-  :hook ((LaTeX-mode . turn-on-cdlatex)
-         (LaTeX-mode . font-lock-mode)))

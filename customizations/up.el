@@ -5,10 +5,10 @@
 (setq package-enable-at-startup nil)
 
 ;; configure package sources
-(setq package-archives
-      '(("melpa-stable" . "https://stable.melpa.org/packages/")
-        ("melpa"        . "https://melpa.org/packages/")
-        ("gnu"          . "http://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 ;; set these packages to latest stable version
 (setq package-pinned-packages
