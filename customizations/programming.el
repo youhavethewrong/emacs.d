@@ -24,7 +24,10 @@
   (add-hook 'prog-mode-hook (lambda () (yafolding-mode))))
 
 ;; JavaScript
-(use-package prettier-js)
+(use-package prettier-js
+  :config
+  (setq prettier-js-width-mode nil))
+
 (use-package js2-mode)
 (use-package js2-refactor)
 
@@ -56,6 +59,11 @@
 
 (use-package typescript-mode
   :ensure t
+  :config
+  (setq typescript-indent-level 2
+        typescript-indent-switch-clauses nil
+        typescript-indent-list-items nil
+        typescript-auto-indent-flag nil)
   :init
   (add-hook 'typescript-mode-hook 'prettier-js-mode))
 
@@ -66,7 +74,8 @@
          (typescript-mode . tide-hl-identifier-mode)))
 
 (use-package rust-mode
-  :init (setq lsp-rust-server 'rust-analyzer))
+  :init (setq lsp-rust-server 'rust-analyzer
+              rust-format-on-save t))
 
 (use-package restclient)
 
@@ -78,7 +87,7 @@
   (setq lsp-prefer-flymake nil)
   :hook
   ((rust-mode . lsp)
-   (js . lsp))
+   (js-mode . lsp))
   :commands lsp)
 
 (use-package lsp-ui
