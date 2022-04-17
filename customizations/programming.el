@@ -118,6 +118,9 @@
   (global-company-mode 1)
   (global-set-key (kbd "C-<tab>") 'company-complete))
 
+;; auto-complete
+(use-package auto-complete)
+
 ;; Groovy
 (use-package groovy-mode
   :init
