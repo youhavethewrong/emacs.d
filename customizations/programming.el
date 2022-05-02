@@ -77,6 +77,8 @@
   :init (setq lsp-rust-server 'rust-analyzer
               rust-format-on-save t))
 
+(use-package dap-mode)
+
 (use-package restclient)
 
 ;; Language Server Protocol
