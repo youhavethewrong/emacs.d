@@ -23,6 +23,11 @@
   :config
   (add-hook 'prog-mode-hook (lambda () (yafolding-mode))))
 
+;; flycheck for syntax checking
+(use-package flycheck
+  :ensure t
+  :hook ((after-init . global-flycheck-mode)))
+
 ;; JavaScript
 (use-package prettier-js
   :config
@@ -64,20 +69,28 @@
         typescript-indent-switch-clauses nil
         typescript-indent-list-items nil
         typescript-auto-indent-flag nil)
-  :init
-  (add-hook 'typescript-mode-hook 'prettier-js-mode))
+  :hook (typescript-mode . prettier-js-mode)
+  :config
+  (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode)))
+
+;; Add node_modules to PATH
+;; via https://astute.dev/build-a-basic-typescript-ide-with-emacs-6a209c46199e
+(use-package add-node-modules-path
+  :ensure t
+  :hook ((typescript-mode . add-node-modules-path)))
 
 (use-package tide
   :ensure t
   :after (typescript-mode company flycheck)
   :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)))
+         (typescript-mode . tide-hl-identifier-mode))
+  :config (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
 
 (use-package rust-mode
   :init (setq lsp-rust-server 'rust-analyzer
               rust-format-on-save t))
 
-(use-package dap-mode)
+;; (use-package dap-mode)
 
 (use-package restclient)
 
@@ -88,8 +101,7 @@
   :config
   (setq lsp-prefer-flymake nil)
   :hook
-  ((rust-mode . lsp)
-   (js-mode . lsp))
+  ((rust-mode . lsp))
   :commands lsp)
 
 (use-package lsp-ui
