@@ -1,10 +1,10 @@
-(define-package "auto-complete" "20220105.439" "Auto Completion for GNU Emacs"
+(define-package "auto-complete" "1.5.1" "Auto Completion for GNU Emacs"
   '((popup "0.5.0")
     (cl-lib "0.5"))
-  :commit "d515059ea5316c81223f6d969e45b16b47365b5c" :authors
+  :commit "0655b7f1e6c0f8475adc55f2b86404a877f26a77" :authors
   '(("Tomohiro Matsuyama" . "m2ym.pub@gmail.com"))
   :maintainer
-  '("Jen-Chieh Shen" . "jcs090218@gmail.com")
+  '("Tomohiro Matsuyama" . "m2ym.pub@gmail.com")
   :keywords
   '("completion" "convenience")
   :url "https://github.com/auto-complete/auto-complete")
