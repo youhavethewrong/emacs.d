@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: rust-test-run
+# key: rust
+# --
+
+#[test]
+fn $1() {
+    let input = $2;
+    let expected = $3;
+    let actual = Solution::$4(input);
+    assert_eq!(expected, actual);
+}
