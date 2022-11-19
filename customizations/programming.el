@@ -86,9 +86,8 @@
          (typescript-mode . tide-hl-identifier-mode))
   :config (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
 
-(use-package rust-mode
-  :init (setq lsp-rust-server 'rust-analyzer
-              rust-format-on-save t))
+(use-package rustic
+  :init (setq rust-format-on-save t))
 
 ;; (use-package dap-mode)
 

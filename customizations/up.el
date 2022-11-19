@@ -15,8 +15,6 @@
       '(
         (cider               . "melpa-stable")
         (clj-refactor        . "melpa-stable")
-        (lsp-mode            . "melpa-stable")
-        (lsp-ui              . "melpa-stable")
         (org-bullets         . "melpa-stable")
         (projectile          . "melpa-stable")
         (use-package         . "melpa-stable")
