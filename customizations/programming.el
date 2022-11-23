@@ -87,7 +87,9 @@
   :config (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
 
 (use-package rustic
-  :init (setq rust-format-on-save t))
+  :ensure t
+  :config
+  (setq rustic-format-trigger 'on-save))
 
 ;; (use-package dap-mode)
 
