@@ -173,6 +173,9 @@
   (setq cider-auto-select-error-buffer t)
   (setq cider-lein-parameters "repl :headless :host localhost"))
 
+
+(use-package yaml-mode)
+
 ;; -----------------------------------------------------------------------------
 ;; NOT DEALT WITH YET
 ;; -----------------------------------------------------------------------------
