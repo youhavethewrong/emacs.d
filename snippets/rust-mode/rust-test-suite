@@ -9,8 +9,9 @@ mod tests {
 
     #[test]
     fn simple_case() {
+        let input = "";
         let expected = "";
-        let actual = $1();
+        let actual = $1(input);
         assert_eq!(expected, actual);
     }
 }
