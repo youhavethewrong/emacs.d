@@ -89,7 +89,8 @@
 (use-package rustic
   :ensure t
   :config
-  (setq rustic-format-trigger 'on-save))
+  (setq rustic-format-trigger 'on-save
+        rustic-rustfmt-args "--edition 2021"))
 
 ;; (use-package dap-mode)
 
