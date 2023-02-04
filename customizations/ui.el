@@ -19,7 +19,7 @@
 ;;(-filter (lambda (font) (string-suffix-p "Nerd Font" font)) (font-family-list))
 (if (memq window-system '(mac ns))
     (set-face-attribute 'default nil :family "FiraCode Nerd Font" :height 110 :weight 'regular :width 'regular)
-  (set-face-attribute 'default nil :family "Fira Mono" :height 90 :weight 'regular :width 'regular))
+  (set-face-attribute 'default nil :family "Fira Mono" :height 80 :weight 'regular :width 'regular))
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
@@ -65,12 +65,5 @@
     (setq browse-url-generic-program "firefox"))
 
 (if (display-graphic-p)
-    (let ((ratio (/ (x-display-pixel-width)
-                    (x-display-pixel-height)))
-          (base 400))
-      (set-frame-height (selected-frame)
-                        (/ (- (x-display-pixel-height) base)
-                           (frame-char-height)))
-      (set-frame-width (selected-frame)
-                       (/ (- (x-display-pixel-width) (* base ratio))
-                          (frame-char-width)))))
+    (set-frame-width (selected-frame) 132)
+    (set-frame-height (selected-frame) 80))
