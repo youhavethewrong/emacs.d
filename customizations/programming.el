@@ -86,9 +86,11 @@
          (typescript-mode . tide-hl-identifier-mode))
   :config (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
 
-(use-package rust-mode
-  :init (setq lsp-rust-server 'rust-analyzer
-              rust-format-on-save t))
+(use-package rustic
+  :ensure t
+  :config
+  (setq rustic-format-trigger 'on-save
+        rustic-rustfmt-args "--edition 2021"))
 
 ;; (use-package dap-mode)
 
@@ -171,6 +173,9 @@
   (setq cider-show-error-buffer t)
   (setq cider-auto-select-error-buffer t)
   (setq cider-lein-parameters "repl :headless :host localhost"))
+
+
+(use-package yaml-mode)
 
 ;; -----------------------------------------------------------------------------
 ;; NOT DEALT WITH YET

@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: rust-leetcode-solution
+# key: rust
+# --
+
+pub struct Solution;
+
+/**
+ Problem URL:
+ - $1
+
+*/
+
+$2
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn simple_case() {
+        let expected = "";
+        let actual = $3();
+        assert_eq!(expected, actual);
+    }
+}

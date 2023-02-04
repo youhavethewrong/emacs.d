@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: rust-test-suite
+# key: rust
+# --
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn simple_case() {
+        let input = "";
+        let expected = "";
+        let actual = $1(input);
+        assert_eq!(expected, actual);
+    }
+}
