@@ -10,3 +10,13 @@
 (use-package org-bullets
   :defer t
   :hook (org-mode . org-bullets-mode))
+
+(defun esc/dated-template ()
+  (concat (format "\n* %s \n**" (format-time-string "%B%e, %Y")) " %?"))
+
+(setq org-capture-templates
+      '(
+        ("m" "Maintenance" entry (file "~/lab-journal/maintenance.org")
+         (function esc/dated-template)
+         )
+        ))
