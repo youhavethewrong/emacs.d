@@ -40,6 +40,7 @@
   (powerline-default-theme))
 
 (use-package gruvbox-theme)
+(use-package atom-one-dark-theme)
 
 (defun disable-all-themes ()
   (mapcar
@@ -51,13 +52,13 @@
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'gruvbox-light-hard t)))
+    (load-theme 'leuven t)))
 
 (defun dark-mode ()
   (interactive)
   (progn
     (disable-all-themes)
-    (load-theme 'gruvbox-dark-hard t)))
+    (load-theme 'atom-one-dark t)))
 
 ;; open everything with firefox on linux, open on mac
 (if (memq window-system '(mac ns))
