@@ -1,6 +1,7 @@
 (use-package org
   :init
   (setq org-adapt-indentation nil)
+  (setq org-edit-src-content-indentation 0)
   :config
   (add-to-list 'org-structure-template-alist '("r" . "src rust
 "))
