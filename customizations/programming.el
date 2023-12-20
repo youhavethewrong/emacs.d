@@ -92,7 +92,7 @@
   (setq rustic-format-trigger 'on-save
         rustic-rustfmt-args "--edition 2021"))
 
-;; (use-package dap-mode)
+(require 'dap-cpptools)
 
 (use-package restclient)
 
