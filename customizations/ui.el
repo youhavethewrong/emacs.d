@@ -19,8 +19,8 @@
 ;; (-filter (lambda (font) (string-suffix-p "Mono" font)) (font-family-list))
 
 (if (memq window-system '(mac ns))
-    (set-face-attribute 'default nil :family "FiraCode Nerd Font" :height 110 :weight 'regular :width 'regular)
-  (set-face-attribute 'default nil :family "Dank Mono" :height 90 :weight 'regular :width 'regular))
+    (set-face-attribute 'default nil :family "FiraCode Nerd Font" :height 115 :weight 'regular :width 'regular)
+  (set-face-attribute 'default nil :family "Dank Mono" :height 100 :weight 'regular :width 'regular))
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
@@ -50,12 +50,14 @@
 
 ;; make it easy to switch back and forth depending on light conditions
 (defun light-mode ()
+  "Switch to the standard light theme."
   (interactive)
   (progn
     (disable-all-themes)
     (load-theme 'leuven t)))
 
 (defun dark-mode ()
+  "Switch to the standard dark theme."
   (interactive)
   (progn
     (disable-all-themes)

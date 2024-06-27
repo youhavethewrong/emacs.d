@@ -174,6 +174,7 @@
   (setq cider-auto-select-error-buffer t)
   (setq cider-lein-parameters "repl :headless :host localhost"))
 
+(use-package zprint-mode)
 
 (use-package yaml-mode)
 
