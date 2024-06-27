@@ -54,3 +54,14 @@
     (progn
       (add-hook 'before-save-hook 'delete-trailing-whitespace)
       (message "Hook added."))))
+
+(defun increment-number-at-point ()
+  (interactive)
+  (let ((old-point (point)))
+    (unwind-protect
+        (progn
+          (skip-chars-backward "0-9")
+          (or (looking-at "[0-9]+")
+              (error "No number at point"))
+          (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+      (goto-char old-point))))

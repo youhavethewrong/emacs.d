@@ -60,7 +60,7 @@
  '(fci-rule-color "#383838")
  '(org-adapt-indentation nil)
  '(package-selected-packages
-   '(dap-mode yafolding use-package tide string-inflection selectrum rust-mode rjsx-mode restclient restart-emacs rainbow-delimiters projectile prettier-js powerline paredit org-bullets magit lsp-ui linum-off js2-refactor ido-completing-read+ idle-highlight-mode gruvbox-theme groovy-mode exec-path-from-shell company clojure-mode-extra-font-locking cider buffer-move beacon auto-complete amx ace-window))
+   '(esup dap-mode yafolding use-package tide string-inflection selectrum rust-mode rjsx-mode restclient restart-emacs rainbow-delimiters projectile prettier-js powerline paredit org-bullets magit lsp-ui linum-off js2-refactor ido-completing-read+ idle-highlight-mode gruvbox-theme groovy-mode exec-path-from-shell company clojure-mode-extra-font-locking cider buffer-move beacon auto-complete amx ace-window))
  '(prettier-js-width-mode nil)
  '(rust-format-on-save t))
 

@@ -3,3 +3,7 @@
 
 (use-package elpher
   :defer t)
+
+(use-package esup
+  :ensure t
+  :pin melpa)

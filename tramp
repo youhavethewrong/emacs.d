@@ -1,20 +1,6 @@
-;; -*- emacs-lisp -*- <21/01/21 20:11:53 /home/negated/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <24/05/31 08:28:17 ~/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; Run `M-x tramp-cleanup-all-connections' instead.
 
-(((tramp-file-name "scp" nil nil "haven" nil nil nil)
-  ("readlink" "\\readlink")
-  ("uname" "Linux 5.4.0-54-generic")
-  ("locale" "LC_ALL=en_US.utf8")
-  ("test" "test")
-  ("remote-path"
-   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
-  ("pipe-buf" 4096)
-  ("remote-shell" "/bin/sh")
-  ("~" "/home/negated")
-  ("stat" "env QUOTING_STYLE=locale \\stat")
-  ("file-exists" "test -e")
-  ("id" "/usr/bin/id")
-  ("gid-string" "negated")
-  ("gid-integer" 1000)
-  ("case-insensitive" nil)))
+(((tramp-file-name "cache" nil nil nil nil nil nil)
+  ("tramp-version" "2.6.0.29.1")))
